@@ -1,30 +1,76 @@
-import { ArrowUpRight, Github } from 'lucide-react';
+import React from 'react';
+import { Github, Linkedin, Mail, Code2, Heart, ArrowUp } from 'lucide-react';
 import { personal } from '../../data/portfolio';
 
-const footerLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Journey', href: '#journey' },
-];
-
 export function Footer() {
+  const year = new Date().getFullYear();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="border-t border-white/[0.08] bg-black/10" role="contentinfo">
-      <div className="container-custom py-8 sm:py-10">
-        <div className="flex flex-col gap-7 sm:flex-row sm:items-center sm:justify-between">
-          <a href="#hero" aria-label="Back to top" className="group flex w-fit items-center gap-3 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-violet/20 bg-violet/[0.08] font-mono text-xs text-violet-light">KB.</span>
-            <span><span className="block text-sm font-medium text-white">{personal.name}</span><span className="block text-[10px] text-slate-muted">Computer Science · MAIT Delhi</span></span>
-          </a>
+    <footer className="border-t border-white/5 bg-black/20" role="contentinfo">
+      <div className="container-custom py-12">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Brand */}
+          <div className="flex flex-col items-center md:items-start gap-1">
+            <div className="flex items-center gap-2">
+              <Code2 size={16} className="text-violet" />
+              <span className="font-bold text-slate-primary text-sm">
+                {personal.name.split(' ')[0]}
+                <span className="text-gradient">.dev</span>
+              </span>
+            </div>
+            <p className="text-slate-muted text-xs">
+              Computer Science & Engineering Student @ MAIT Delhi
+            </p>
+          </div>
 
-          <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-5 gap-y-2">
-            {footerLinks.map((link) => <a key={link.href} href={link.href} className="text-xs text-slate-muted transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan">{link.label}</a>)}
-          </nav>
+          {/* Social Links */}
+          <div className="flex items-center gap-2.5">
+            <a
+              href={personal.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+              className="p-2 rounded-lg bg-white/[0.03] border border-white/5 text-slate-muted hover:text-slate-primary hover:border-violet/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet"
+            >
+              <Github size={16} />
+            </a>
+            <a
+              href={personal.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              className="p-2 rounded-lg bg-white/[0.03] border border-white/5 text-slate-muted hover:text-cyan hover:border-cyan/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet"
+            >
+              <Linkedin size={16} />
+            </a>
+            <a
+              href={`mailto:${personal.email}`}
+              aria-label="Send email"
+              className="p-2 rounded-lg bg-white/[0.03] border border-white/5 text-slate-muted hover:text-violet-light hover:border-violet/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet"
+            >
+              <Mail size={16} />
+            </a>
+          </div>
 
-          <div className="flex items-center justify-between gap-5 sm:justify-end">
-            <a href={personal.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" className="inline-flex items-center gap-2 text-xs text-slate-muted transition-colors hover:text-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan"><Github size={15} /> GitHub <ArrowUpRight size={12} /></a>
-            <p className="text-[10px] text-slate-muted">© {new Date().getFullYear()} {personal.name}</p>
+          {/* Copyright & Back to Top */}
+          <div className="flex items-center gap-4">
+            <p className="text-slate-muted text-xs flex items-center gap-1.5">
+              © {year} {personal.name}. Built with
+              <Heart size={12} className="text-violet fill-violet" aria-label="love" />
+            </p>
+
+            <button
+              onClick={scrollToTop}
+              className="p-2 rounded-lg bg-white/[0.03] border border-white/5 text-slate-muted hover:text-violet-light hover:border-violet/30 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet"
+              title="Back to top"
+              aria-label="Scroll back to top"
+            >
+              <ArrowUp size={14} />
+            </button>
           </div>
         </div>
       </div>

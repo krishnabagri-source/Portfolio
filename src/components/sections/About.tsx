@@ -1,12 +1,25 @@
-import { ArrowUpRight, BrainCircuit, Code2, GraduationCap } from 'lucide-react';
+import React from 'react';
+import { MapPin, GraduationCap, Cpu, Brain, Award, Sparkles, CheckCircle2 } from 'lucide-react';
 import { personal } from '../../data/portfolio';
-import { Reveal } from '../ui/Reveal';
 import { SectionHeader } from '../ui/SectionHeader';
+import { Reveal } from '../ui/Reveal';
 
 const interests = [
-  { number: '01', icon: Code2, title: 'Software engineering', text: 'Turning a clear idea into practical, well-structured software.' },
-  { number: '02', icon: GraduationCap, title: 'Problem solving', text: 'Building a strong foundation in algorithms, data structures, and C++.' },
-  { number: '03', icon: BrainCircuit, title: 'AI & machine learning', text: 'Exploring how intelligent systems can make useful products better.' },
+  {
+    icon: Cpu,
+    label: 'Software Engineering',
+    desc: 'Designing modular, scalable applications, building robust backend APIs, and applying clean architecture principles.',
+  },
+  {
+    icon: Brain,
+    label: 'AI & Machine Learning',
+    desc: 'Exploring deep learning fundamentals, vector search, LLMs, and integrating intelligent agents into real products.',
+  },
+  {
+    icon: GraduationCap,
+    label: 'Data Structures & Algorithms',
+    desc: 'Solving challenging algorithmic problems in C++ to cultivate rigorous computational and optimization intuition.',
+  },
 ];
 
 export function About() {
@@ -15,54 +28,125 @@ export function About() {
       <div className="container-custom">
         <SectionHeader
           id="about-heading"
-          eyebrow="A little about me"
-          title="Curiosity, then"
-          titleHighlight="craft."
-          description="A computer science student drawn to the space between sound fundamentals and useful things people can build with them."
-          align="left"
+          eyebrow="About Me"
+          title="Background &"
+          titleHighlight="Core Philosophy"
+          description="A glimpse into my academic foundation, technical passions, and drive to create impactful software."
+          align="center"
         />
 
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-          <Reveal direction="left">
-            <div className="relative flex min-h-[300px] flex-col justify-between overflow-hidden rounded-[22px] border border-white/[0.08] bg-[#11111b] p-6 sm:min-h-[360px] sm:p-9">
-              <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-violet/10 blur-[85px]" aria-hidden="true" />
-              <div className="relative flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-muted">
-                <span className="h-px w-7 bg-cyan" /> Based in New Delhi
-              </div>
-              <div className="relative mt-12">
-                <p className="font-mono text-xs text-violet-light">{personal.name}</p>
-                <h3 className="mt-3 max-w-md text-3xl font-medium leading-tight tracking-[-0.055em] text-white sm:text-4xl">
-                  Learning the fundamentals. Building things that put them to work.
-                </h3>
-              </div>
-              <div className="relative mt-10 flex items-center justify-between gap-4 border-t border-white/10 pt-5">
-                <div>
-                  <p className="text-sm font-medium text-slate-primary">{personal.title}</p>
-                  <p className="mt-1 text-xs text-slate-muted">{personal.bioPoints[0]}</p>
-                </div>
-                <a href="#projects" aria-label="Explore selected projects" className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 text-slate-muted transition-colors hover:border-cyan/40 hover:text-cyan focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan">
-                  <ArrowUpRight size={17} />
-                </a>
-              </div>
-            </div>
-          </Reveal>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Column: Profile Card & Education highlights */}
+          <div className="lg:col-span-5 space-y-6">
+            <Reveal direction="left">
+              <div className="p-6 rounded-2xl bg-card border border-white/5 shadow-card glass-hover relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-violet/10 rounded-full blur-2xl pointer-events-none" />
 
-          <div className="flex flex-col justify-center">
-            <Reveal direction="right" delay={80}>
-              <p className="max-w-2xl text-lg leading-8 text-slate-primary/90 sm:text-xl sm:leading-9">{personal.bio}</p>
-              <ul className="mt-8 divide-y divide-white/[0.08] border-y border-white/[0.08]" aria-label="Areas of interest">
-                {interests.map(({ number, icon: Icon, title, text }) => (
-                  <li key={number} className="group flex gap-4 py-5 sm:gap-6">
-                    <span className="pt-1 font-mono text-[10px] text-cyan/70">{number}</span>
-                    <Icon size={17} className="mt-1 shrink-0 text-violet-light" aria-hidden="true" />
-                    <div>
-                      <h3 className="text-sm font-medium text-white sm:text-base">{title}</h3>
-                      <p className="mt-1.5 max-w-lg text-xs leading-6 text-slate-muted sm:text-sm">{text}</p>
+                {/* Avatar and basic info */}
+                <div className="flex items-center gap-3 sm:gap-4 mb-6">
+                  <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-violet/30 shadow-glow-violet flex-shrink-0 bg-base">
+                    <img
+                      src="/krishna-photo.jpg"
+                      alt="Krishna Bagri"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        (e.target as HTMLElement).style.display = 'none';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-slate-primary font-bold text-base sm:text-xl truncate">
+                      {personal.name}
+                    </h3>
+                    <p className="text-violet-light font-mono text-xs mb-1 truncate">
+                      B.Tech CSE @ MAIT
+                    </p>
+                    <div className="flex items-center gap-1.5 text-xs text-slate-muted">
+                      <MapPin size={13} className="text-cyan flex-shrink-0" />
+                      <span className="truncate">{personal.location}</span>
                     </div>
-                  </li>
-                ))}
-              </ul>
+                  </div>
+                </div>
+
+                {/* Academic Highlights */}
+                <div className="space-y-2.5 pt-4 border-t border-white/5 font-mono text-xs">
+                  <div className="flex items-center justify-between p-2.5 rounded-lg bg-white/5">
+                    <span className="text-slate-muted flex items-center gap-2">
+                      <GraduationCap size={14} className="text-violet" />
+                      MAIT Delhi (CSE)
+                    </span>
+                    <span className="text-cyan font-medium">2023–2027</span>
+                  </div>
+
+                  <div className="flex items-center justify-between p-2.5 rounded-lg bg-white/5">
+                    <span className="text-slate-muted flex items-center gap-2">
+                      <Award size={14} className="text-violet" />
+                      CBSE Class XII (PCM)
+                    </span>
+                    <span className="text-slate-primary font-medium">83.4%</span>
+                  </div>
+
+                  <div className="flex items-center justify-between p-2.5 rounded-lg bg-white/5">
+                    <span className="text-slate-muted flex items-center gap-2">
+                      <Award size={14} className="text-violet" />
+                      CBSE Class X
+                    </span>
+                    <span className="text-slate-primary font-medium">88.2%</span>
+                  </div>
+                </div>
+              </div>
             </Reveal>
+
+            {/* Quick status pill */}
+            <Reveal delay={150} direction="left">
+              <div className="p-4 rounded-xl border border-cyan/15 bg-cyan/5 flex items-center gap-3">
+                <Sparkles size={18} className="text-cyan flex-shrink-0" />
+                <p className="text-xs text-slate-muted leading-relaxed">
+                  Focusing on high-performance C++, core CS fundamentals, and generative AI systems.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Right Column: Bio description & Area of Interests */}
+          <div className="lg:col-span-7 space-y-6">
+            <Reveal delay={100} direction="right">
+              <div className="p-6 sm:p-7 rounded-2xl bg-card border border-white/5 shadow-card space-y-4">
+                <h3 className="text-slate-primary font-semibold text-lg flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-violet" />
+                  Engineering Mindset
+                </h3>
+                <p className="text-slate-muted leading-relaxed text-sm sm:text-base">
+                  {personal.bio}
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                  {personal.bioPoints.map((point) => (
+                    <div key={point} className="flex items-start gap-2 text-xs text-slate-muted">
+                      <CheckCircle2 size={14} className="text-violet flex-shrink-0 mt-0.5" />
+                      <span>{point}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Interests Cards */}
+            <div className="space-y-3">
+              {interests.map(({ icon: Icon, label, desc }, i) => (
+                <Reveal key={label} delay={180 + i * 80} direction="right">
+                  <div className="group flex items-start gap-4 p-4 sm:p-5 rounded-xl bg-card border border-white/5 glass-hover transition-all duration-300">
+                    <div className="p-2.5 rounded-lg bg-violet/10 border border-violet/15 flex-shrink-0 group-hover:bg-violet/20 group-hover:border-violet/30 transition-colors">
+                      <Icon size={18} className="text-violet" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <h4 className="text-slate-primary font-semibold text-sm mb-1">{label}</h4>
+                      <p className="text-slate-muted text-xs sm:text-sm leading-relaxed">{desc}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </div>
