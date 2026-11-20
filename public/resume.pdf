@@ -1,0 +1,98 @@
+%PDF-1.4
+1 0 obj
+<<
+  /Type /Catalog
+  /Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+  /Type /Pages
+  /Kids [3 0 R]
+  /Count 1
+>>
+endobj
+3 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 612 792]
+  /Contents 4 0 R
+  /Resources <<
+    /Font <<
+      /F1 5 0 R
+      /F2 6 0 R
+    >>
+  >>
+>>
+endobj
+4 0 obj
+<<
+  /Length 550
+>>
+stream
+BT
+/F1 24 Tf
+50 720 Td
+(Krishna Bagri) Tj
+/F2 12 Tf
+0 -24 Td
+(B.Tech Computer Science & Engineering | MAIT Delhi (2023 - 2027)) Tj
+0 -20 Td
+(Email: krishnabagri@example.com | Location: New Delhi, India) Tj
+0 -36 Td
+/F1 14 Tf
+(EDUCATION) Tj
+/F2 11 Tf
+0 -18 Td
+(Maharaja Agrasen Institute of Technology (MAIT) - B.Tech CSE (2023 - Present)) Tj
+0 -16 Td
+(CBSE Class XII - 83.4% (2023) | CBSE Class X - 88.2% (2021)) Tj
+0 -36 Td
+/F1 14 Tf
+(CORE SKILLS) Tj
+/F2 11 Tf
+0 -18 Td
+(Languages: C++, Python, TypeScript, JavaScript, SQL) Tj
+0 -16 Td
+(Frameworks & Concepts: React, FastAPI, Tailwind CSS, DSA, OOP, AI/ML Basics) Tj
+0 -36 Td
+/F1 14 Tf
+(NOTE) Tj
+/F2 10 Tf
+0 -16 Td
+(This is an auto-generated preview placeholder. Full comprehensive resume available upon request.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica-Bold
+>>
+endobj
+6 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica
+>>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000266 00000 n 
+0000000870 00000 n 
+0000000947 00000 n 
+trailer
+<<
+  /Size 7
+  /Root 1 0 R
+>>
+startxref
+1019
+%%EOF
