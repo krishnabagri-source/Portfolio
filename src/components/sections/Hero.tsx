@@ -37,23 +37,10 @@ export function Hero() {
           </motion.div>
         </div>
 
-        <motion.div initial={reduceMotion ? false : { opacity: 0, scale: 0.97, y: 18 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.2 }} className="hero-portrait-wrap relative mx-auto w-full max-w-[300px] md:max-w-[320px] lg:mt-10 lg:max-w-[430px]">
-          <div className="hero-portrait-frame relative aspect-[0.82] overflow-hidden rounded-[46%_46%_12px_12px] border border-white/10 bg-[#11131d]">
-            <img src="/krishna-photo.jpg" alt="Krishna Bagri" className="h-full w-full object-cover object-[center_24%] grayscale-[18%]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#080b09]/85 via-transparent to-[#080b09]/10" aria-hidden="true" />
-            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-5 sm:p-7">
-              <div><p className="font-mono text-[10px] uppercase tracking-[0.22em] text-emerald">Currently</p><p className="mt-1 text-sm text-white">Learning by building</p></div>
-              <span className="mb-1 h-2 w-2 rounded-full bg-emerald shadow-[0_0_14px_rgba(16,185,129,0.65)]" aria-label="Available" />
-            </div>
-          </div>
-          <div className="absolute -left-5 top-[25%] hidden rounded-2xl border border-white/10 bg-[#11121a]/90 px-4 py-3 shadow-2xl backdrop-blur-xl sm:block">
-            <span className="block font-mono text-[9px] uppercase tracking-[0.18em] text-slate-muted">Focus</span><span className="mt-1 block text-xs text-slate-primary">Software · AI/ML</span>
-          </div>
-          <div className="absolute -right-4 bottom-[19%] hidden rounded-2xl border border-white/10 bg-[#11121a]/90 px-4 py-3 shadow-2xl backdrop-blur-xl sm:block">
-            <span className="block font-mono text-[9px] uppercase tracking-[0.18em] text-slate-muted">Studying</span><span className="mt-1 block text-xs text-slate-primary">B.Tech CSE · 2023—27</span>
-          </div>
-          <span className="absolute -right-6 top-10 h-20 w-20 rounded-full border border-emerald/20" aria-hidden="true" />
-        </motion.div>
+        <motion.figure initial={reduceMotion ? false : { opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.85, delay: 0.2 }} className="hero-portrait-wrap relative mx-auto w-full max-w-[300px] sm:max-w-[360px] md:max-w-[320px] lg:mt-10 lg:max-w-[440px]">
+          <div className="hero-portrait-glow pointer-events-none absolute inset-x-[8%] bottom-[8%] top-[12%]" aria-hidden="true" />
+          <img src="/images/krishna-portrait.png" alt="Krishna Bagri, standing in a blue striped shirt" width="1086" height="1448" loading="eager" fetchPriority="high" decoding="async" className="relative z-10 block h-auto w-full object-contain drop-shadow-[0_24px_50px_rgba(0,0,0,0.3)]" />
+        </motion.figure>
       </div>
     </section>
   );
