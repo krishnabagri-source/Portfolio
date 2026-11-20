@@ -49,7 +49,7 @@ export function Contact() {
           <div className="lg:col-span-5 space-y-4">
             <Reveal direction="left">
               <div className="p-6 rounded-2xl bg-card border border-white/5 shadow-card space-y-5">
-                <div className="flex items-center gap-2 text-xs font-mono text-cyan">
+                <div className="flex items-center gap-2 text-xs font-mono text-emerald">
                   <Sparkles size={14} />
                   <span>Prompt Response Guaranteed</span>
                 </div>
@@ -76,7 +76,7 @@ export function Contact() {
                   </div>
                   <button
                     onClick={handleCopyEmail}
-                    className="p-2 rounded-lg bg-white/5 hover:bg-violet/20 hover:text-violet text-slate-muted transition-colors flex-shrink-0 cursor-pointer"
+                    className="p-2 rounded-lg bg-white/5 hover:bg-emerald/20 hover:text-emerald text-slate-muted transition-colors flex-shrink-0 cursor-pointer"
                     title="Copy email to clipboard"
                     aria-label="Copy email address"
                   >
@@ -90,7 +90,7 @@ export function Contact() {
                     href={personal.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-violet/30 hover:bg-white/[0.05] transition-all group"
+                    className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-emerald/30 hover:bg-white/[0.05] transition-all group"
                   >
                     <div className="flex items-center gap-3">
                       <div className="p-2 rounded-lg bg-white/5 text-slate-primary">
@@ -98,7 +98,7 @@ export function Contact() {
                       </div>
                       <span className="text-xs font-medium text-slate-primary">GitHub</span>
                     </div>
-                    <span className="text-xs font-mono text-slate-muted group-hover:text-violet-light transition-colors">
+                    <span className="text-xs font-mono text-slate-muted group-hover:text-emerald-light transition-colors">
                       @krishnabagri
                     </span>
                   </a>
@@ -107,15 +107,15 @@ export function Contact() {
                     href={personal.linkedinUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-violet/30 hover:bg-white/[0.05] transition-all group"
+                    className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-emerald/30 hover:bg-white/[0.05] transition-all group"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-cyan/10 text-cyan">
+                      <div className="p-2 rounded-lg bg-emerald/10 text-emerald">
                         <Linkedin size={16} />
                       </div>
                       <span className="text-xs font-medium text-slate-primary">LinkedIn</span>
                     </div>
-                    <span className="text-xs font-mono text-slate-muted group-hover:text-cyan transition-colors">
+                    <span className="text-xs font-mono text-slate-muted group-hover:text-emerald transition-colors">
                       in/krishnabagri
                     </span>
                   </a>
@@ -124,15 +124,15 @@ export function Contact() {
                     href={personal.resumeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-violet/30 hover:bg-white/[0.05] transition-all group"
+                    className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/5 hover:border-emerald/30 hover:bg-white/[0.05] transition-all group"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="p-2 rounded-lg bg-violet/10 text-violet-light">
+                      <div className="p-2 rounded-lg bg-emerald/10 text-emerald-light">
                         <FileText size={16} />
                       </div>
                       <span className="text-xs font-medium text-slate-primary">Resume</span>
                     </div>
-                    <span className="text-xs font-mono text-slate-muted group-hover:text-violet-light transition-colors">
+                    <span className="text-xs font-mono text-slate-muted group-hover:text-emerald-light transition-colors">
                       PDF Document
                     </span>
                   </a>
@@ -153,14 +153,14 @@ export function Contact() {
                 </p>
 
                 {sentNotice ? (
-                  <div className="p-6 rounded-xl bg-violet/10 border border-violet/30 text-center space-y-3">
-                    <div className="w-10 h-10 rounded-full bg-violet/20 text-violet flex items-center justify-center mx-auto">
+                  <div className="p-6 rounded-xl bg-emerald/10 border border-emerald/30 text-center space-y-3">
+                    <div className="w-10 h-10 rounded-full bg-emerald/20 text-emerald flex items-center justify-center mx-auto">
                       <Check size={20} />
                     </div>
                     <h4 className="text-slate-primary font-bold text-base">Client Opened!</h4>
                     <p className="text-xs text-slate-muted max-w-sm mx-auto">
                       Your default email application was triggered with your message. If it didn't open, reach out directly at{' '}
-                      <span className="text-violet-light font-mono">{personal.email}</span>.
+                      <span className="text-emerald-light font-mono">{personal.email}</span>.
                     </p>
                     <Button
                       variant="ghost"
@@ -189,7 +189,7 @@ export function Contact() {
                           value={form.name}
                           onChange={handleChange}
                           placeholder="e.g. Alex Chen"
-                          className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-slate-primary text-sm placeholder:text-slate-muted/50 focus:outline-none focus:border-violet focus:ring-1 focus:ring-violet transition-colors"
+                          className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-slate-primary text-sm placeholder:text-slate-muted/50 focus:outline-none focus:border-emerald focus:ring-1 focus:ring-emerald transition-colors"
                         />
                       </div>
 
@@ -208,7 +208,7 @@ export function Contact() {
                           value={form.email}
                           onChange={handleChange}
                           placeholder="alex@example.com"
-                          className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-slate-primary text-sm placeholder:text-slate-muted/50 focus:outline-none focus:border-violet focus:ring-1 focus:ring-violet transition-colors"
+                          className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-slate-primary text-sm placeholder:text-slate-muted/50 focus:outline-none focus:border-emerald focus:ring-1 focus:ring-emerald transition-colors"
                         />
                       </div>
                     </div>
@@ -227,7 +227,7 @@ export function Contact() {
                         value={form.subject}
                         onChange={handleChange}
                         placeholder="Internship opportunity / project discussion"
-                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-slate-primary text-sm placeholder:text-slate-muted/50 focus:outline-none focus:border-violet focus:ring-1 focus:ring-violet transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-slate-primary text-sm placeholder:text-slate-muted/50 focus:outline-none focus:border-emerald focus:ring-1 focus:ring-emerald transition-colors"
                       />
                     </div>
 
@@ -246,7 +246,7 @@ export function Contact() {
                         value={form.message}
                         onChange={handleChange}
                         placeholder="Hi Krishna, I came across your portfolio and wanted to reach out regarding..."
-                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-slate-primary text-sm placeholder:text-slate-muted/50 focus:outline-none focus:border-violet focus:ring-1 focus:ring-violet transition-colors resize-none"
+                        className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-slate-primary text-sm placeholder:text-slate-muted/50 focus:outline-none focus:border-emerald focus:ring-1 focus:ring-emerald transition-colors resize-none"
                       />
                     </div>
 

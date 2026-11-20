@@ -26,7 +26,7 @@ export function Journey() {
         <div className="max-w-3xl mx-auto relative">
           {/* Vertical Glowing Connector Line */}
           <div
-            className="absolute left-4 sm:left-7 top-6 bottom-6 w-0.5 bg-gradient-to-b from-violet via-cyan/40 to-transparent pointer-events-none"
+            className="absolute left-4 sm:left-7 top-6 bottom-6 w-0.5 bg-gradient-to-b from-emerald via-emerald/40 to-transparent pointer-events-none"
             aria-hidden="true"
           />
 
@@ -42,8 +42,8 @@ export function Journey() {
                       <div
                         className={`w-9 h-9 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center flex-shrink-0 border transition-all duration-300 ${
                           item.highlight
-                            ? 'bg-violet/20 border-violet/60 text-violet shadow-glow-violet'
-                            : 'bg-card border-white/10 text-cyan'
+                            ? 'bg-emerald/20 border-emerald/60 text-emerald shadow-glow-emerald'
+                            : 'bg-card border-white/10 text-emerald'
                         }`}
                         aria-hidden="true"
                       >
@@ -55,7 +55,7 @@ export function Journey() {
                     <div
                       className={`flex-1 p-5 sm:p-6 rounded-2xl bg-card border transition-all duration-300 glass-hover ${
                         item.highlight
-                          ? 'border-violet/40 shadow-glow-violet/40'
+                          ? 'border-emerald/40 shadow-glow-emerald/40'
                           : 'border-white/5'
                       }`}
                     >
@@ -66,18 +66,18 @@ export function Journey() {
                               {item.title}
                             </h3>
                             {item.highlight && (
-                              <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono text-violet-light bg-violet/10 px-2 py-0.5 rounded-md border border-violet/20">
+                              <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-mono text-emerald-light bg-emerald/10 px-2 py-0.5 rounded-md border border-emerald/20">
                                 <Sparkles size={11} /> Current
                               </span>
                             )}
                           </div>
-                          <p className="text-cyan text-xs sm:text-sm font-medium mt-0.5">
+                          <p className="text-emerald text-xs sm:text-sm font-medium mt-0.5">
                             {item.subtitle}
                           </p>
                         </div>
 
                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono bg-white/5 border border-white/5 text-slate-muted w-fit">
-                          <Calendar size={12} className="text-violet" />
+                          <Calendar size={12} className="text-emerald" />
                           {item.date}
                         </span>
                       </div>
@@ -99,13 +99,13 @@ export function Journey() {
                     className="w-9 h-9 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center flex-shrink-0 border border-dashed border-white/20 bg-card/40 text-slate-muted"
                     aria-hidden="true"
                   >
-                    <CheckCircle size={18} className="sm:w-5 sm:h-5 text-violet/50" />
+                    <CheckCircle size={18} className="sm:w-5 sm:h-5 text-emerald/50" />
                   </div>
                 </div>
 
                 <div className="flex-1 p-5 rounded-2xl border border-dashed border-white/10 bg-white/[0.01]">
                   <p className="text-slate-muted text-xs sm:text-sm flex items-center gap-2">
-                    <span className="text-violet font-mono">Next up:</span>
+                    <span className="text-emerald font-mono">Next up:</span>
                     Software Engineering Internships, open-source contributions, and university hackathons.
                   </p>
                 </div>

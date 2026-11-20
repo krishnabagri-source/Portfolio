@@ -52,7 +52,7 @@ export function Skills() {
               onClick={() => setActiveTab(tab)}
               className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all cursor-pointer ${
                 activeTab === tab
-                  ? 'bg-violet text-white shadow-glow-violet'
+                  ? 'bg-emerald text-white shadow-glow-emerald'
                   : 'bg-card border border-white/5 text-slate-muted hover:text-slate-primary hover:border-white/20'
               }`}
             >
@@ -68,11 +68,11 @@ export function Skills() {
 
             return (
               <Reveal key={category.name} delay={catIdx * 70}>
-                <div className="h-full p-6 sm:p-7 rounded-2xl bg-card border border-white/5 shadow-card glass-hover transition-all duration-300 hover:border-violet/20 flex flex-col justify-between">
+                <div className="h-full p-6 sm:p-7 rounded-2xl bg-card border border-white/5 shadow-card glass-hover transition-all duration-300 hover:border-emerald/20 flex flex-col justify-between">
                   <div>
                     {/* Category Title */}
                     <div className="flex items-center gap-3 mb-5">
-                      <div className="p-2 rounded-xl bg-violet/10 border border-violet/20 text-violet">
+                      <div className="p-2 rounded-xl bg-emerald/10 border border-emerald/20 text-emerald">
                         <Icon size={18} />
                       </div>
                       <div>
@@ -96,13 +96,13 @@ export function Skills() {
                             role="listitem"
                             className={`group relative flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-mono font-medium transition-all duration-200 cursor-default ${
                               meta?.highlight
-                                ? 'bg-violet/10 border border-violet/30 text-violet-light shadow-sm hover:border-violet/60 hover:bg-violet/15'
+                                ? 'bg-emerald/10 border border-emerald/30 text-emerald-light shadow-sm hover:border-emerald/60 hover:bg-emerald/15'
                                 : 'bg-white/5 border border-white/5 text-slate-primary/90 hover:border-white/20 hover:bg-white/10'
                             }`}
                           >
                             <Check
                               size={12}
-                              className={meta?.highlight ? 'text-cyan' : 'text-slate-muted'}
+                              className={meta?.highlight ? 'text-emerald' : 'text-slate-muted'}
                             />
                             <span>{skill}</span>
 
@@ -120,7 +120,7 @@ export function Skills() {
                   {/* Category Accent Line */}
                   <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-muted">
                     <span>Clean Code & Modularity</span>
-                    <span className="text-cyan">Production-Ready</span>
+                    <span className="text-emerald">Production-Ready</span>
                   </div>
                 </div>
               </Reveal>
@@ -130,11 +130,11 @@ export function Skills() {
 
         {/* Learning Focus Callout */}
         <Reveal delay={300}>
-          <div className="mt-10 p-5 rounded-2xl border border-cyan/20 bg-gradient-to-r from-cyan/5 via-violet/5 to-transparent flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="mt-10 p-5 rounded-2xl border border-emerald/20 bg-gradient-to-r from-emerald/5 via-emerald/5 to-transparent flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan animate-ping flex-shrink-0" />
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald animate-ping flex-shrink-0" />
               <div>
-                <p className="text-xs font-mono text-cyan uppercase tracking-wider">
+                <p className="text-xs font-mono text-emerald uppercase tracking-wider">
                   Active Continuous Learning
                 </p>
                 <p className="text-sm text-slate-primary">
@@ -142,7 +142,7 @@ export function Skills() {
                 </p>
               </div>
             </div>
-            <span className="text-xs font-mono text-violet-light bg-violet/10 px-3 py-1.5 rounded-lg border border-violet/20 flex-shrink-0">
+            <span className="text-xs font-mono text-emerald-light bg-emerald/10 px-3 py-1.5 rounded-lg border border-emerald/20 flex-shrink-0">
               Target: SWE 2026/2027
             </span>
           </div>

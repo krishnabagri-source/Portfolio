@@ -18,7 +18,7 @@ function App() {
 
         {/* Divider glow */}
         <div className="relative h-px mx-auto max-w-4xl" aria-hidden="true">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-violet/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald/30 to-transparent" />
         </div>
 
         <About />
@@ -30,7 +30,7 @@ function App() {
         <Skills />
 
         <div className="relative h-px mx-auto max-w-4xl" aria-hidden="true">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-violet/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald/20 to-transparent" />
         </div>
 
         <Projects />
@@ -42,7 +42,7 @@ function App() {
         <Journey />
 
         <div className="relative h-px mx-auto max-w-4xl" aria-hidden="true">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-violet/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald/20 to-transparent" />
         </div>
 
         <Contact />
