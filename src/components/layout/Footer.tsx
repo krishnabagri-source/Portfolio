@@ -16,7 +16,7 @@ export function Footer() {
           {/* Brand */}
           <div className="flex flex-col items-center md:items-start gap-1">
             <div className="flex items-center gap-2">
-              <Code2 size={16} className="text-violet" />
+              <Code2 size={16} className="text-emerald" />
               <span className="font-bold text-slate-primary text-sm">
                 {personal.name.split(' ')[0]}
                 <span className="text-gradient">.dev</span>
@@ -34,7 +34,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub profile"
-              className="p-2 rounded-lg bg-white/[0.03] border border-white/5 text-slate-muted hover:text-slate-primary hover:border-violet/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet"
+              className="p-2 rounded-lg bg-white/[0.03] border border-white/5 text-slate-muted hover:text-slate-primary hover:border-emerald/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald"
             >
               <Github size={16} />
             </a>
@@ -43,14 +43,14 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
-              className="p-2 rounded-lg bg-white/[0.03] border border-white/5 text-slate-muted hover:text-cyan hover:border-cyan/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet"
+              className="p-2 rounded-lg bg-white/[0.03] border border-white/5 text-slate-muted hover:text-emerald hover:border-emerald/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald"
             >
               <Linkedin size={16} />
             </a>
             <a
               href={`mailto:${personal.email}`}
               aria-label="Send email"
-              className="p-2 rounded-lg bg-white/[0.03] border border-white/5 text-slate-muted hover:text-violet-light hover:border-violet/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet"
+              className="p-2 rounded-lg bg-white/[0.03] border border-white/5 text-slate-muted hover:text-emerald-light hover:border-emerald/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald"
             >
               <Mail size={16} />
             </a>
@@ -60,12 +60,12 @@ export function Footer() {
           <div className="flex items-center gap-4">
             <p className="text-slate-muted text-xs flex items-center gap-1.5">
               © {year} {personal.name}. Built with
-              <Heart size={12} className="text-violet fill-violet" aria-label="love" />
+              <Heart size={12} className="text-emerald fill-emerald" aria-label="love" />
             </p>
 
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-lg bg-white/[0.03] border border-white/5 text-slate-muted hover:text-violet-light hover:border-violet/30 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet"
+              className="p-2 rounded-lg bg-white/[0.03] border border-white/5 text-slate-muted hover:text-emerald-light hover:border-emerald/30 transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald"
               title="Back to top"
               aria-label="Scroll back to top"
             >

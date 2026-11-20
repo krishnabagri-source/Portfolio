@@ -24,7 +24,7 @@ export function SectionHeader({
     <div className={`flex flex-col gap-3 mb-12 sm:mb-16 ${alignClass}`}>
       {eyebrow && (
         <Reveal>
-          <span className="text-xs font-mono font-medium tracking-[0.2em] uppercase text-violet">
+          <span className="text-xs font-mono font-medium tracking-[0.2em] uppercase text-emerald">
             {eyebrow}
           </span>
         </Reveal>

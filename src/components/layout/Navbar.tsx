@@ -85,11 +85,11 @@ export function Navbar() {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet rounded-md"
+          className="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald rounded-md"
           aria-label="Krishna Bagri — back to top"
         >
-          <div className="w-8 h-8 rounded-lg bg-violet/10 border border-violet/20 flex items-center justify-center group-hover:bg-violet/20 group-hover:border-violet/40 transition-colors">
-            <Code2 size={16} className="text-violet" />
+          <div className="w-8 h-8 rounded-lg bg-emerald/10 border border-emerald/20 flex items-center justify-center group-hover:bg-emerald/20 group-hover:border-emerald/40 transition-colors">
+            <Code2 size={16} className="text-emerald" />
           </div>
           <span className="font-bold text-slate-primary text-sm tracking-tight">
             {personal.name.split(' ')[0]}
@@ -109,9 +109,9 @@ export function Navbar() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet ${
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald ${
                     isActive
-                      ? 'text-cyan bg-cyan/10 border border-cyan/20'
+                      ? 'text-emerald bg-emerald/10 border border-emerald/20'
                       : 'text-slate-muted hover:text-slate-primary hover:bg-white/5'
                   }`}
                   aria-current={isActive ? 'page' : undefined}
@@ -129,7 +129,7 @@ export function Navbar() {
             href={personal.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium border border-violet/30 text-violet-light hover:bg-violet/15 hover:border-violet/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium border border-emerald/30 text-emerald-light hover:bg-emerald/15 hover:border-emerald/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald"
           >
             <Download size={13} />
             <span>Resume</span>
@@ -138,7 +138,7 @@ export function Navbar() {
 
         {/* Mobile Hamburger Toggle */}
         <button
-          className="md:hidden p-2 rounded-lg text-slate-muted hover:text-slate-primary hover:bg-white/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet cursor-pointer"
+          className="md:hidden p-2 rounded-lg text-slate-muted hover:text-slate-primary hover:bg-white/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={isOpen}
@@ -176,15 +176,15 @@ export function Navbar() {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet flex items-center justify-between ${
+                className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald flex items-center justify-between ${
                   isActive
-                    ? 'text-cyan bg-cyan/10 border border-cyan/20'
+                    ? 'text-emerald bg-emerald/10 border border-emerald/20'
                     : 'text-slate-muted hover:text-slate-primary hover:bg-white/5'
                 }`}
                 tabIndex={isOpen ? 0 : -1}
               >
                 <span>{link.label}</span>
-                {isActive && <span className="w-1.5 h-1.5 rounded-full bg-cyan" />}
+                {isActive && <span className="w-1.5 h-1.5 rounded-full bg-emerald" />}
               </a>
             );
           })}
@@ -194,7 +194,7 @@ export function Navbar() {
               href={personal.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium border border-violet/30 text-violet-light hover:bg-violet/15 text-center transition-all"
+              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium border border-emerald/30 text-emerald-light hover:bg-emerald/15 text-center transition-all"
               tabIndex={isOpen ? 0 : -1}
             >
               <Download size={14} />
