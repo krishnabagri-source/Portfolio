@@ -70,21 +70,21 @@ export function About() {
                       <GraduationCap size={15} className="text-emerald" />
                       MAIT Delhi (B.Tech CSE)
                     </span>
-                    <span className="text-emerald-light font-medium">2023–2027</span>
+                    <span className="text-emerald-light font-medium">2025–2029 (Pursuing)</span>
                   </div>
 
                   <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5">
                     <span className="text-slate-muted flex items-center gap-2">
                       <Award size={15} className="text-emerald" />
-                      CBSE Class XII (PCM)
+                      CBSE Class XII (2025)
                     </span>
-                    <span className="text-slate-primary font-medium">83.4%</span>
+                    <span className="text-slate-primary font-medium">83.2%</span>
                   </div>
 
                   <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5">
                     <span className="text-slate-muted flex items-center gap-2">
                       <Award size={15} className="text-emerald" />
-                      CBSE Class X Distinction
+                      CBSE Class X (2023)
                     </span>
                     <span className="text-slate-primary font-medium">88.2%</span>
                   </div>

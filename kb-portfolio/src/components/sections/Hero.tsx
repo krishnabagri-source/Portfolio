@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { Github, Linkedin, Download, ArrowRight, Sparkles, MapPin, Code2 } from 'lucide-react';
+import { Github, Linkedin, Download, ArrowRight, MapPin, Sparkles, Terminal } from 'lucide-react';
 import { personal } from '../../data/portfolio';
 import { useTypewriter } from '../../hooks/useTypewriter';
 import { Button } from '../ui/Button';
@@ -37,7 +37,7 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      {/* Ambient background glows */}
+      {/* Atmospheric ambient glows */}
       <div
         className="absolute top-1/4 left-10 w-96 h-96 rounded-full blur-[140px] pointer-events-none opacity-20"
         style={{ background: 'radial-gradient(circle, #10B981, transparent)' }}
@@ -53,27 +53,32 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Left Column: Text & Call to Actions */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
-            {/* Availability Pill */}
+            {/* Location & Institution Meta Bar (Moved closer to introduction) */}
             <motion.div
-              initial={shouldReduceMotion ? {} : { opacity: 0, y: -12 }}
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald/30 bg-emerald/10 text-xs font-mono text-emerald-light mb-6 shadow-sm"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-5 text-xs font-mono"
             >
-              <span className="w-2 h-2 rounded-full bg-emerald animate-pulse" aria-hidden="true" />
-              <span>B.Tech CSE @ MAIT Delhi</span>
-              <span className="text-white/20">|</span>
-              <span className="text-slate-muted">Open to Opportunities</span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald/30 bg-emerald/10 text-emerald-light shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-emerald animate-pulse" aria-hidden="true" />
+                <span>B.Tech CSE @ MAIT (2025–2029)</span>
+              </span>
+
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] text-slate-muted">
+                <MapPin size={12} className="text-emerald flex-shrink-0" />
+                <span>{personal.location}</span>
+              </span>
             </motion.div>
 
-            {/* Name Heading */}
+            {/* Oversized Name Heading with Trailing Period */}
             <motion.h1
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-primary leading-[1.08] mb-3"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-slate-primary leading-[1.02] mb-3"
             >
-              Hi, I'm <span className="text-gradient">Krishna Bagri</span>
+              Krishna Bagri<span className="text-emerald">.</span>
             </motion.h1>
 
             {/* Role Subtitle */}
@@ -91,7 +96,7 @@ export function Hero() {
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.4 }}
-              className="text-sm sm:text-base font-mono text-slate-muted mb-6 h-8 flex items-center justify-center lg:justify-start gap-2"
+              className="text-sm sm:text-base font-mono text-slate-muted mb-5 h-8 flex items-center justify-center lg:justify-start gap-2"
               aria-live="polite"
               aria-label={`Specialization: ${typedRole}`}
             >
@@ -104,14 +109,17 @@ export function Hero() {
               />
             </motion.div>
 
-            {/* Narrative Tagline */}
+            {/* Refined Supporting Narrative */}
             <motion.p
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.5 }}
               className="text-slate-muted text-base sm:text-lg max-w-xl mb-8 leading-relaxed font-normal"
             >
-              {personal.tagline} Focused on core computer science foundations, clean architecture, and modern full-stack development.
+              Computer Science undergraduate at <span className="text-slate-primary font-medium">MAIT, Delhi</span> (2025–2029). 
+              Dedicated to engineering robust software with strong foundations in <span className="text-emerald-light font-mono font-medium">C++</span>, 
+              Data Structures &amp; Algorithms (<span className="text-emerald-light font-mono font-medium">DSA</span>), 
+              and practical exploration of <span className="text-slate-primary font-medium">AI/ML</span> architectures.
             </motion.p>
 
             {/* Action Buttons */}
@@ -185,37 +193,37 @@ export function Hero() {
                 <p className="text-[11px] font-mono text-slate-muted uppercase tracking-wider">Projects</p>
               </div>
               <div>
-                <p className="text-lg sm:text-xl font-bold text-emerald font-mono">C++ · Py</p>
-                <p className="text-[11px] font-mono text-slate-muted uppercase tracking-wider">Primary Stack</p>
+                <p className="text-lg sm:text-xl font-bold text-emerald font-mono">C++ · DSA</p>
+                <p className="text-[11px] font-mono text-slate-muted uppercase tracking-wider">Core Focus</p>
               </div>
               <div>
                 <p className="text-lg sm:text-xl font-bold text-slate-primary font-mono">MAIT</p>
-                <p className="text-[11px] font-mono text-slate-muted uppercase tracking-wider">CSE 2023–27</p>
+                <p className="text-[11px] font-mono text-slate-muted uppercase tracking-wider">CSE 2025–29</p>
               </div>
             </motion.div>
           </div>
 
-          {/* Right Column: Personal Portrait with Atmospheric Emerald Glow */}
+          {/* Right Column: Personal Portrait with Refined Emerald Atmospheric Glow */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
             <motion.div
               initial={shouldReduceMotion ? {} : { opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="relative w-full max-w-[300px] sm:max-w-[360px] lg:max-w-[420px]"
+              className="relative w-full max-w-[290px] sm:max-w-[340px] lg:max-w-[400px]"
             >
-              {/* Subtle Emerald Atmospheric Glow */}
+              {/* Refined Emerald Atmospheric Glow */}
               <div
-                className="hero-portrait-glow pointer-events-none absolute -inset-4 sm:-inset-8 rounded-full"
+                className="hero-portrait-glow pointer-events-none absolute -inset-4 sm:-inset-6 rounded-full"
                 aria-hidden="true"
               />
 
-              {/* Behind Portrait Ambient Ring */}
+              {/* Ambient Glass Frame Behind Portrait */}
               <div
-                className="absolute inset-x-8 bottom-6 top-10 rounded-3xl border border-emerald/20 bg-gradient-to-b from-emerald/10 via-card/40 to-card/80 backdrop-blur-sm -z-0"
+                className="absolute inset-x-6 bottom-4 top-8 rounded-3xl border border-emerald/20 bg-gradient-to-b from-emerald/10 via-card/40 to-card/90 backdrop-blur-sm -z-0"
                 aria-hidden="true"
               />
 
-              {/* The Actual Transparent Portrait Image */}
+              {/* Transparent Portrait Image */}
               <img
                 src="/images/krishna-portrait.png"
                 alt="Krishna Bagri"
@@ -226,16 +234,16 @@ export function Hero() {
                 className="relative z-10 w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
               />
 
-              {/* Floating Badge (Bottom Corner) */}
+              {/* Floating Status Badge */}
               <motion.div
                 initial={shouldReduceMotion ? {} : { opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="absolute -bottom-3 left-1/2 -translate-x-1/2 sm:left-4 sm:translate-x-0 z-20 px-3.5 py-2 rounded-xl bg-card/90 border border-emerald/30 shadow-card backdrop-blur-md flex items-center gap-2.5 whitespace-nowrap"
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 sm:left-4 sm:translate-x-0 z-20 px-3.5 py-2 rounded-xl bg-card/95 border border-emerald/30 shadow-card backdrop-blur-md flex items-center gap-2.5 whitespace-nowrap"
               >
                 <div className="w-2 h-2 rounded-full bg-emerald animate-ping" />
                 <span className="text-xs font-mono font-medium text-slate-primary">
-                  CSE Undergrad @ MAIT
+                  CSE Undergrad @ MAIT (2025–2029)
                 </span>
               </motion.div>
             </motion.div>
