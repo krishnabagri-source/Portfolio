@@ -1,150 +1,63 @@
-import React, { useState } from 'react';
-import { Code2, Layers, Wrench, BrainCircuit, Check, Terminal } from 'lucide-react';
+import { Braces, Code2, Cpu, Layers3, Wrench } from 'lucide-react';
 import { skillCategories } from '../../data/portfolio';
-import { SectionHeader } from '../ui/SectionHeader';
 import { Reveal } from '../ui/Reveal';
+import { SectionHeader } from '../ui/SectionHeader';
 
-const categoryIcons = {
-  Languages: Code2,
-  'Frameworks & Libraries': Layers,
-  'Tools & Platforms': Wrench,
-  Concepts: BrainCircuit,
-};
-
-// Distinct styling for key verified skills
-const skillBadgeDetails: Record<
-  string,
-  { label: string; highlight?: boolean; note?: string }
-> = {
-  'C++': { label: 'C++', highlight: true, note: 'Primary DSA language' },
-  Python: { label: 'Python', highlight: true, note: 'AI/ML & Automation' },
-  React: { label: 'React', highlight: true, note: 'Frontend UI' },
-  TypeScript: { label: 'TypeScript', highlight: true, note: 'Type-safe web' },
-  FastAPI: { label: 'FastAPI', highlight: true, note: 'High-speed APIs' },
-  'Data Structures & Algorithms': { label: 'Data Structures & Algorithms', highlight: true, note: 'Core focus' },
+const categoryDetails: Record<string, { icon: typeof Code2; note: string }> = {
+  'Programming Languages': { icon: Code2, note: 'Languages I use to think and build' },
+  Frontend: { icon: Layers3, note: 'Interfaces for the web' },
+  Backend: { icon: Cpu, note: 'Services and APIs' },
+  Tools: { icon: Wrench, note: 'Everyday development tools' },
+  'Core Concepts': { icon: Braces, note: 'Foundations I keep strengthening' },
 };
 
 export function Skills() {
-  const [activeTab, setActiveTab] = useState<string>('All');
-
-  const categoriesToDisplay =
-    activeTab === 'All'
-      ? skillCategories
-      : skillCategories.filter((c) => c.name === activeTab);
-
   return (
     <section id="skills" className="section-padding scroll-mt-16" aria-labelledby="skills-heading">
       <div className="container-custom">
         <SectionHeader
           id="skills-heading"
-          eyebrow="Technical Stack"
-          title="Skills &"
-          titleHighlight="Competencies"
-          description="Verified toolset grounded in core computer science principles — categorized honestly with no arbitrary percentage bars."
-          align="center"
+          eyebrow="Tools & foundations"
+          title="A toolkit in"
+          titleHighlight="progress."
+          description="A practical snapshot of the languages, tools, and concepts I’m working with—without made-up ratings or proficiency scores."
+          align="left"
         />
 
-        {/* Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
-          {['All', ...skillCategories.map((c) => c.name)].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all cursor-pointer ${
-                activeTab === tab
-                  ? 'bg-violet text-white shadow-glow-violet'
-                  : 'bg-card border border-white/5 text-slate-muted hover:text-slate-primary hover:border-white/20'
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
-
-        {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {categoriesToDisplay.map((category, catIdx) => {
-            const Icon = categoryIcons[category.name as keyof typeof categoryIcons] || Terminal;
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
+          {skillCategories.map((category, index) => {
+            const detail = categoryDetails[category.name];
+            const Icon = detail.icon;
+            const isWide = index === 4;
 
             return (
-              <Reveal key={category.name} delay={catIdx * 70}>
-                <div className="h-full p-6 sm:p-7 rounded-2xl bg-card border border-white/5 shadow-card glass-hover transition-all duration-300 hover:border-violet/20 flex flex-col justify-between">
-                  <div>
-                    {/* Category Title */}
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className="p-2 rounded-xl bg-violet/10 border border-violet/20 text-violet">
-                        <Icon size={18} />
-                      </div>
-                      <div>
-                        <h3 className="text-slate-primary font-bold text-base">
-                          {category.name}
-                        </h3>
-                        <span className="text-[11px] font-mono text-slate-muted">
-                          {category.skills.length} competencies
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Skill Pills */}
-                    <div className="flex flex-wrap gap-2.5" role="list">
-                      {category.skills.map((skill) => {
-                        const meta = skillBadgeDetails[skill];
-
-                        return (
-                          <div
-                            key={skill}
-                            role="listitem"
-                            className={`group relative flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-mono font-medium transition-all duration-200 cursor-default ${
-                              meta?.highlight
-                                ? 'bg-violet/10 border border-violet/30 text-violet-light shadow-sm hover:border-violet/60 hover:bg-violet/15'
-                                : 'bg-white/5 border border-white/5 text-slate-primary/90 hover:border-white/20 hover:bg-white/10'
-                            }`}
-                          >
-                            <Check
-                              size={12}
-                              className={meta?.highlight ? 'text-cyan' : 'text-slate-muted'}
-                            />
-                            <span>{skill}</span>
-
-                            {meta?.note && (
-                              <span className="hidden sm:inline-block text-[10px] text-slate-muted font-normal ml-1 border-l border-white/10 pl-1.5 opacity-70 group-hover:opacity-100">
-                                {meta.note}
-                              </span>
-                            )}
-                          </div>
-                        );
-                      })}
-                    </div>
+              <Reveal key={category.name} delay={index * 65} className={isWide ? 'sm:col-span-2 lg:col-span-2' : 'sm:col-span-1 lg:col-span-2'}>
+                <article className="group h-full rounded-[18px] border border-white/[0.08] bg-[#11111b] p-5 transition-colors duration-300 hover:border-violet/30 hover:bg-[#14141f] sm:p-6">
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-violet/15 bg-violet/[0.08] text-violet-light transition-colors group-hover:border-violet/30 group-hover:bg-violet/15">
+                      <Icon size={18} aria-hidden="true" />
+                    </span>
+                    <span className="font-mono text-[10px] text-slate-muted/60">0{index + 1}</span>
                   </div>
-
-                  {/* Category Accent Line */}
-                  <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-muted">
-                    <span>Clean Code & Modularity</span>
-                    <span className="text-cyan">Production-Ready</span>
-                  </div>
-                </div>
+                  <h3 className="mt-6 text-base font-medium tracking-tight text-white">{category.name}</h3>
+                  <p className="mt-1 text-xs text-slate-muted">{detail.note}</p>
+                  <ul className="mt-5 flex flex-wrap gap-2" aria-label={`${category.name} skills`}>
+                    {category.skills.map((skill) => (
+                      <li key={skill} className="rounded-full border border-white/[0.09] bg-white/[0.025] px-3 py-1.5 font-mono text-[10px] text-slate-primary/85 transition-colors group-hover:border-white/[0.14] sm:text-[11px]">
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
               </Reveal>
             );
           })}
         </div>
 
-        {/* Learning Focus Callout */}
-        <Reveal delay={300}>
-          <div className="mt-10 p-5 rounded-2xl border border-cyan/20 bg-gradient-to-r from-cyan/5 via-violet/5 to-transparent flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan animate-ping flex-shrink-0" />
-              <div>
-                <p className="text-xs font-mono text-cyan uppercase tracking-wider">
-                  Active Continuous Learning
-                </p>
-                <p className="text-sm text-slate-primary">
-                  Currently advancing deep learning architectures, transformer models, and scalable system design.
-                </p>
-              </div>
-            </div>
-            <span className="text-xs font-mono text-violet-light bg-violet/10 px-3 py-1.5 rounded-lg border border-violet/20 flex-shrink-0">
-              Target: SWE 2026/2027
-            </span>
+        <Reveal delay={200}>
+          <div className="mt-5 flex flex-col gap-3 rounded-[18px] border border-white/[0.08] px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+            <p className="max-w-xl text-sm leading-6 text-slate-muted">The common thread: learn the underlying idea, then put it to use in a project.</p>
+            <span className="inline-flex w-fit items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-cyan"><span className="h-1.5 w-1.5 rounded-full bg-cyan" /> Always learning</span>
           </div>
         </Reveal>
       </div>

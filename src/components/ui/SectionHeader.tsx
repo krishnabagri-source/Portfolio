@@ -32,7 +32,7 @@ export function SectionHeader({
       <Reveal delay={100}>
         <h2
           id={id}
-          className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-primary leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-[-0.055em] text-slate-primary leading-[1.08]"
         >
           {title}
           {titleHighlight && (

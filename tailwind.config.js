@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        base: '#09090F',
+        background: '#09090F',
         card: '#171725',
         violet: {
           DEFAULT: '#8B5CF6',

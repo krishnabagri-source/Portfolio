@@ -70,7 +70,7 @@ export function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'glass border-b border-white/5 py-3 shadow-lg'
-          : 'bg-base/70 backdrop-blur-md py-4 sm:py-5 border-b border-white/[0.03]'
+          : 'bg-background/70 backdrop-blur-md py-4 sm:py-5 border-b border-white/[0.03]'
       }`}
       role="banner"
     >
@@ -91,9 +91,8 @@ export function Navbar() {
           <div className="w-8 h-8 rounded-lg bg-violet/10 border border-violet/20 flex items-center justify-center group-hover:bg-violet/20 group-hover:border-violet/40 transition-colors">
             <Code2 size={16} className="text-violet" />
           </div>
-          <span className="font-bold text-slate-primary text-sm tracking-tight">
-            {personal.name.split(' ')[0]}
-            <span className="text-gradient">.dev</span>
+          <span className="font-mono text-sm font-semibold tracking-tight text-slate-primary">
+            KB<span className="text-cyan">.</span>
           </span>
         </a>
 

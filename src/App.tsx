@@ -10,7 +10,7 @@ import { Contact } from './components/sections/Contact';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-base text-slate-primary overflow-x-hidden">
+    <div className="relative min-h-screen bg-background text-slate-primary overflow-x-hidden">
       <Navbar />
 
       <main id="main-content" role="main">
