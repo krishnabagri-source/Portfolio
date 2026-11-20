@@ -40,10 +40,10 @@ export function Hero() {
         <motion.div initial={reduceMotion ? false : { opacity: 0, scale: 0.97, y: 18 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.2 }} className="hero-portrait-wrap relative mx-auto w-full max-w-[300px] md:max-w-[320px] lg:mt-10 lg:max-w-[430px]">
           <div className="hero-portrait-frame relative aspect-[0.82] overflow-hidden rounded-[46%_46%_12px_12px] border border-white/10 bg-[#11131d]">
             <img src="/krishna-photo.jpg" alt="Krishna Bagri" className="h-full w-full object-cover object-[center_24%] grayscale-[18%]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#09090f]/85 via-transparent to-[#09090f]/10" aria-hidden="true" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#080b09]/85 via-transparent to-[#080b09]/10" aria-hidden="true" />
             <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-5 sm:p-7">
               <div><p className="font-mono text-[10px] uppercase tracking-[0.22em] text-emerald">Currently</p><p className="mt-1 text-sm text-white">Learning by building</p></div>
-              <span className="mb-1 h-2 w-2 rounded-full bg-emerald shadow-[0_0_14px_rgba(56,189,248,0.8)]" aria-label="Available" />
+              <span className="mb-1 h-2 w-2 rounded-full bg-emerald shadow-[0_0_14px_rgba(16,185,129,0.65)]" aria-label="Available" />
             </div>
           </div>
           <div className="absolute -left-5 top-[25%] hidden rounded-2xl border border-white/10 bg-[#11121a]/90 px-4 py-3 shadow-2xl backdrop-blur-xl sm:block">

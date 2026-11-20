@@ -2,7 +2,7 @@ import React from 'react';
 
 interface BadgeProps {
   children: React.ReactNode;
-  variant?: 'emerald' | 'cyan' | 'neutral';
+  variant?: 'emerald' | 'highlight' | 'neutral';
   className?: string;
   role?: string;
 }
@@ -10,7 +10,7 @@ interface BadgeProps {
 export function Badge({ children, variant = 'neutral', className = '', role }: BadgeProps) {
   const variants = {
     emerald: 'bg-emerald-glow text-emerald-light border border-emerald/20',
-    cyan: 'bg-emerald-glow text-emerald-light border border-emerald/20',
+    highlight: 'bg-emerald-glow text-emerald-light border border-emerald/20',
     neutral: 'bg-white/5 text-slate-muted border border-white/10',
   };
 
