@@ -1,6 +1,5 @@
 // ============================================================
 // All portfolio content lives here — easy to update.
-// Replace placeholder URLs/text with real values when ready.
 // ============================================================
 
 export interface Project {
@@ -13,7 +12,7 @@ export interface Project {
   tags: string[];
   githubUrl?: string;
   liveUrl?: string;
-  screenshotPlaceholder: string; // gradient CSS string shown until real screenshot is added
+  screenshotPlaceholder: string;
 }
 
 export interface SkillCategory {
@@ -41,23 +40,22 @@ export interface SocialLink {
 export const personal = {
   name: 'Krishna Bagri',
   title: 'Software Engineer in the Making',
-  roles: ['Software Engineer', 'DSA Enthusiast', 'AI/ML Explorer', 'Problem Solver'],
-  tagline: 'Turning complex problems into elegant software.',
-  bio: `I'm a Computer Science undergraduate at Maharaja Agrasen Institute of Technology (MAIT), Delhi. 
-I'm passionate about building real-world software — from intelligent AI systems to performant 
-backend services — with a strong foundation in Data Structures & Algorithms and a growing 
-interest in machine learning and large language models.`,
+  roles: ['Software Engineer', 'C++ & DSA Developer', 'AI/ML Enthusiast', 'Problem Solver'],
+  tagline: 'Crafting performant software with C++, DSA, and modern AI/ML systems.',
+  bio: `I'm a Computer Science undergraduate at Maharaja Agrasen Institute of Technology (MAIT), Delhi (2025–2029). 
+I focus on writing clean, scalable software with deep foundations in C++, Data Structures & Algorithms, 
+and practical exploration of machine learning and intelligent systems.`,
   bioPoints: [
-    'B.Tech CSE at MAIT, Delhi (2023 – 2027)',
-    'Strong foundation in DSA with C++ and competitive programming',
-    'Building AI/ML projects and exploring LLM applications',
-    'Interested in scalable backend systems and software engineering best practices',
+    'B.Tech in CSE at MAIT, Delhi (2025 – 2029, Expected)',
+    'Strong foundations in C++, Data Structures & Algorithms, and computational logic',
+    'Applied AI/ML and intelligent software architecture exploration',
+    'Designing scalable backend systems, clean APIs, and modern responsive frontends',
   ],
-  email: 'krishnabagri@example.com', // TODO: replace with real email
+  email: 'krishnabagri@example.com',
   location: 'New Delhi, India',
-  githubUrl: 'https://github.com/krishnabagri', // TODO: replace with real URL
-  linkedinUrl: 'https://linkedin.com/in/krishnabagri', // TODO: replace with real URL
-  resumeUrl: '/resume.pdf', // TODO: add resume to public/ folder
+  githubUrl: 'https://github.com/krishnabagri',
+  linkedinUrl: 'https://linkedin.com/in/krishnabagri',
+  resumeUrl: '/resume.pdf',
 };
 
 // ── Social Links ──────────────────────────────────────────────
@@ -98,9 +96,9 @@ export const projects: Project[] = [
     problem: 'Planning a trip is fragmented across multiple platforms — research, itinerary building, and budgeting are disconnected.',
     solution: 'TravelPilot unifies trip planning with an AI assistant that generates day-by-day itineraries, recommends places, and adapts plans to user preferences.',
     tags: ['Python', 'FastAPI', 'React', 'TypeScript', 'AI/LLM'],
-    githubUrl: undefined, // TODO: add GitHub URL
-    liveUrl: undefined,   // TODO: add live URL
-    screenshotPlaceholder: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
+    githubUrl: undefined,
+    liveUrl: undefined,
+    screenshotPlaceholder: 'linear-gradient(135deg, #0c131a 0%, #091017 50%, #060a0f 100%)',
   },
   {
     id: 'cerebro',
@@ -111,9 +109,9 @@ export const projects: Project[] = [
     problem: 'Information overload makes it hard to retain and connect knowledge across notes, articles, and ideas.',
     solution: 'CereBro uses vector embeddings and semantic search to surface relevant knowledge automatically, creating an intelligent personal knowledge base.',
     tags: ['Python', 'FastAPI', 'Vector DB', 'LLM', 'React'],
-    githubUrl: undefined, // TODO: add GitHub URL
+    githubUrl: undefined,
     liveUrl: undefined,
-    screenshotPlaceholder: 'linear-gradient(135deg, #0d1117 0%, #1a0533 50%, #2d1b69 100%)',
+    screenshotPlaceholder: 'linear-gradient(135deg, #101018 0%, #0d0d14 50%, #07070b 100%)',
   },
   {
     id: 'solarsim',
@@ -124,9 +122,9 @@ export const projects: Project[] = [
     problem: 'Astronomy education tools are either too simplified or too technical, lacking an engaging visual layer.',
     solution: 'SolarSim renders the solar system with real orbital periods and distances, letting users explore planets interactively with educational overlays.',
     tags: ['TypeScript', 'Three.js', 'Physics', 'WebGL'],
-    githubUrl: undefined, // TODO: add GitHub URL
+    githubUrl: undefined,
     liveUrl: undefined,
-    screenshotPlaceholder: 'linear-gradient(135deg, #000011 0%, #0a0a2e 50%, #001a3a 100%)',
+    screenshotPlaceholder: 'linear-gradient(135deg, #060b14 0%, #03060c 50%, #010205 100%)',
   },
   {
     id: 'languistic',
@@ -137,47 +135,37 @@ export const projects: Project[] = [
     problem: 'Traditional language apps use rigid lesson plans that don\'t adapt to how individual learners progress.',
     solution: 'Languistic uses AI to run adaptive conversation drills, detect weak areas, and personalize vocabulary — simulating a real language tutor.',
     tags: ['React', 'TypeScript', 'Python', 'FastAPI', 'AI/LLM'],
-    githubUrl: undefined, // TODO: add GitHub URL
+    githubUrl: undefined,
     liveUrl: undefined,
-    screenshotPlaceholder: 'linear-gradient(135deg, #0a1628 0%, #1a2744 50%, #0d2137 100%)',
+    screenshotPlaceholder: 'linear-gradient(135deg, #0c1815 0%, #081210 50%, #040908 100%)',
   },
 ];
 
-// ── Journey / Timeline ────────────────────────────────────────
+// ── Journey / Timeline (Strict Chronological Order) ────────────
 export const timelineItems: TimelineItem[] = [
   {
-    id: 'mait',
-    date: '2023 – Present',
-    title: 'B.Tech in Computer Science & Engineering',
-    subtitle: 'Maharaja Agrasen Institute of Technology, Delhi',
-    description: 'Pursuing CSE with focus on algorithms, software engineering, and AI/ML. Active in coding clubs and technical events.',
+    id: 'cbse10',
+    date: '2023',
+    title: 'Completed Class 10 — CBSE',
+    subtitle: 'Secondary School Certificate • 88.2%',
+    description: 'Graduated with 88.2% distinction under CBSE, building a strong early foundation in mathematics, analytical reasoning, and computer basics.',
     type: 'education',
-    highlight: true,
   },
   {
     id: 'cbse12',
-    date: '2023',
-    title: 'Class XII — CBSE (83.4%)',
-    subtitle: 'Senior Secondary Education',
-    description: 'Completed senior secondary with PCM stream (83.4%), developing strong analytical thinking, mathematics, and physics foundations.',
+    date: '2025',
+    title: 'Completed Class 12 — CBSE',
+    subtitle: 'Senior School Certificate (PCM) • 83.2%',
+    description: 'Completed senior secondary education in the Physics, Chemistry, and Mathematics (PCM) stream with 83.2% under CBSE, cultivating rigorous mathematical logic and algorithmic intuition.',
     type: 'education',
   },
   {
-    id: 'cbse10',
-    date: '2021',
-    title: 'Class X — CBSE (88.2%)',
-    subtitle: 'Secondary Education',
-    description: 'Graduated with 88.2% distinction. Developed early passion for computer science and structured problem-solving.',
+    id: 'mait',
+    date: '2025 – 2029',
+    title: 'B.Tech in Computer Science & Engineering',
+    subtitle: 'Maharaja Agrasen Institute of Technology (MAIT), Delhi • Currently Pursuing (Expected 2029)',
+    description: 'Currently pursuing Bachelor of Technology in CSE (Expected 2029) with dedicated focus on core software engineering, C++, Data Structures & Algorithms, and practical AI/ML.',
     type: 'education',
+    highlight: true,
   },
-  // TODO: Add hackathons and achievements when details are confirmed
-  // {
-  //   id: 'hackathon1',
-  //   date: 'Month YYYY',
-  //   title: 'Hackathon Name',
-  //   subtitle: 'Role / Achievement',
-  //   description: 'What was built and what was achieved.',
-  //   type: 'hackathon',
-  //   highlight: true,
-  // },
 ];

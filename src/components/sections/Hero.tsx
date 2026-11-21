@@ -1,46 +1,254 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { ArrowDown, ArrowRight, ArrowUpRight, Github, Linkedin, MapPin } from 'lucide-react';
+import { Github, Linkedin, Download, ArrowRight, MapPin, Sparkles, Terminal } from 'lucide-react';
 import { personal } from '../../data/portfolio';
+import { useTypewriter } from '../../hooks/useTypewriter';
+import { Button } from '../ui/Button';
 
 export function Hero() {
-  const reduceMotion = useReducedMotion();
+  const typedRole = useTypewriter(personal.roles, 75, 1800);
+  const shouldReduceMotion = useReducedMotion();
+
+  const scrollToProjects = (e: React.MouseEvent) => {
+    e.preventDefault();
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
-    <section id="hero" className="hero-shell relative flex min-h-[calc(100svh-72px)] items-center overflow-hidden pb-12 pt-24 sm:pb-16 sm:pt-24 lg:min-h-[760px] lg:pb-20 lg:pt-32" aria-labelledby="hero-title">
-      <div className="hero-grain pointer-events-none absolute inset-0" aria-hidden="true" />
-      <div className="hero-orbit pointer-events-none absolute -right-36 top-20 h-[560px] w-[560px] rounded-full" aria-hidden="true" />
-      <div className="container-custom relative z-10 grid w-full items-center gap-10 md:grid-cols-[1.2fr_0.8fr] md:gap-6 lg:gap-10">
-        <div className="relative z-10 max-w-3xl">
-          <motion.div initial={reduceMotion ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65 }} className="mb-8 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.24em] text-slate-muted sm:text-xs">
-            <span className="h-px w-8 bg-emerald" />
-            Computer science · MAIT, Delhi
-          </motion.div>
-          <motion.h1 id="hero-title" initial={reduceMotion ? false : { opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, delay: 0.08 }} className="max-w-4xl font-sans text-[clamp(4.2rem,10vw,8.6rem)] font-medium leading-[0.82] tracking-[-0.085em] text-slate-primary">
-            Krishna<br />
-            <span className="hero-name-accent">Bagri<span className="text-emerald">.</span></span>
-          </motion.h1>
-          <motion.div initial={reduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.25 }} className="mt-9 grid max-w-2xl gap-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
-            <p className="max-w-lg text-base leading-7 text-slate-muted sm:text-lg sm:leading-8">I build thoughtful software at the intersection of <span className="text-slate-primary">engineering, AI, and the web.</span></p>
-            <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-slate-muted"><MapPin size={13} className="text-emerald" aria-hidden="true" /> New Delhi, India</p>
-          </motion.div>
-          <motion.div initial={reduceMotion ? false : { opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.35 }} className="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#projects" className="hero-primary group inline-flex min-h-12 items-center gap-3 rounded-full px-5 text-sm font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald">Explore selected work <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" /></a>
-            <a href="#contact" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-white/10 px-5 text-sm text-slate-primary transition-colors hover:border-white/25 hover:bg-white/[0.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald">Get in touch <ArrowUpRight size={14} className="text-slate-muted" /></a>
-            <div className="ml-1 flex items-center gap-1 border-l border-white/10 pl-3">
-              <a href={personal.githubUrl} target="_blank" rel="noreferrer" aria-label="GitHub profile" className="rounded-full p-3 text-slate-muted transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald"><Github size={17} /></a>
-              <a href={personal.linkedinUrl} target="_blank" rel="noreferrer" aria-label="LinkedIn profile" className="rounded-full p-3 text-slate-muted transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald"><Linkedin size={17} /></a>
-            </div>
-          </motion.div>
-          <motion.div initial={reduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65 }} className="mt-16 flex items-center gap-4 border-t border-white/[0.08] pt-5 font-mono text-[10px] uppercase tracking-[0.16em] text-slate-muted sm:mt-20">
-            <span className="text-emerald">01</span><span>Curiosity into craft</span><span className="hidden h-px w-12 bg-white/15 sm:block" /><span className="hidden sm:block">Scroll to explore</span><ArrowDown size={13} className="animate-bounce text-slate-muted sm:hidden" />
-          </motion.div>
-        </div>
+    <section
+      id="hero"
+      className="relative min-h-[92vh] pt-28 sm:pt-32 pb-16 sm:pb-24 flex items-center overflow-hidden"
+      aria-label="Introduction"
+    >
+      {/* Background radial glow */}
+      <div
+        className="absolute inset-0 bg-gradient-hero pointer-events-none"
+        aria-hidden="true"
+      />
 
-        <motion.figure initial={reduceMotion ? false : { opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.85, delay: 0.2 }} className="hero-portrait-wrap relative mx-auto w-full max-w-[300px] sm:max-w-[360px] md:max-w-[320px] lg:mt-10 lg:max-w-[440px]">
-          <div className="hero-portrait-glow pointer-events-none absolute inset-x-[8%] bottom-[8%] top-[12%]" aria-hidden="true" />
-          <img src="/images/krishna-portrait.png" alt="Krishna Bagri, standing in a blue striped shirt" width="1086" height="1448" loading="eager" fetchPriority="high" decoding="async" className="relative z-10 block h-auto w-full object-contain drop-shadow-[0_24px_50px_rgba(0,0,0,0.3)]" />
-        </motion.figure>
+      {/* Subtle grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '56px 56px',
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Atmospheric ambient glows */}
+      <div
+        className="absolute top-1/4 left-10 w-96 h-96 rounded-full blur-[140px] pointer-events-none opacity-20"
+        style={{ background: 'radial-gradient(circle, #10B981, transparent)' }}
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-1/4 right-10 w-80 h-80 rounded-full blur-[140px] pointer-events-none opacity-15"
+        style={{ background: 'radial-gradient(circle, #059669, transparent)' }}
+        aria-hidden="true"
+      />
+
+      <div className="container-custom relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          {/* Left Column: Text & Call to Actions */}
+          <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+            {/* Location & Institution Meta Bar (Moved closer to introduction) */}
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-2 mb-5 text-xs font-mono"
+            >
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald/30 bg-emerald/10 text-emerald-light shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-emerald animate-pulse" aria-hidden="true" />
+                <span>B.Tech CSE @ MAIT (2025–2029)</span>
+              </span>
+
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] text-slate-muted">
+                <MapPin size={12} className="text-emerald flex-shrink-0" />
+                <span>{personal.location}</span>
+              </span>
+            </motion.div>
+
+            {/* Oversized Name Heading with Trailing Period */}
+            <motion.h1
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.2 }}
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-slate-primary leading-[1.02] mb-3"
+            >
+              Krishna Bagri<span className="text-emerald">.</span>
+            </motion.h1>
+
+            {/* Role Subtitle */}
+            <motion.h2
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.3 }}
+              className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-primary/95 mb-4"
+            >
+              {personal.title}
+            </motion.h2>
+
+            {/* Animated Role Switcher */}
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.4 }}
+              className="text-sm sm:text-base font-mono text-slate-muted mb-5 h-8 flex items-center justify-center lg:justify-start gap-2"
+              aria-live="polite"
+              aria-label={`Specialization: ${typedRole}`}
+            >
+              <span className="text-slate-muted text-xs uppercase tracking-widest">Focus:</span>
+              <span className="text-emerald-light font-semibold">{typedRole}</span>
+              <span
+                className="inline-block w-0.5 h-4 bg-emerald flex-shrink-0"
+                style={{ animation: 'blink 1s step-end infinite' }}
+                aria-hidden="true"
+              />
+            </motion.div>
+
+            {/* Refined Supporting Narrative */}
+            <motion.p
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.5 }}
+              className="text-slate-muted text-base sm:text-lg max-w-xl mb-8 leading-relaxed font-normal"
+            >
+              Computer Science undergraduate at <span className="text-slate-primary font-medium">MAIT, Delhi</span> (2025–2029). 
+              Dedicated to engineering robust software with strong foundations in <span className="text-emerald-light font-mono font-medium">C++</span>, 
+              Data Structures &amp; Algorithms (<span className="text-emerald-light font-mono font-medium">DSA</span>), 
+              and practical exploration of <span className="text-slate-primary font-medium">AI/ML</span> architectures.
+            </motion.p>
+
+            {/* Action Buttons */}
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.6 }}
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-3.5 mb-10 w-full"
+            >
+              <Button
+                as="a"
+                href="#projects"
+                onClick={scrollToProjects}
+                variant="primary"
+                size="lg"
+                rightIcon={<ArrowRight size={16} />}
+              >
+                View Projects
+              </Button>
+
+              <Button
+                as="a"
+                href={personal.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="secondary"
+                size="lg"
+                leftIcon={<Download size={16} />}
+              >
+                Download Resume
+              </Button>
+
+              <div className="flex items-center gap-2">
+                <Button
+                  as="a"
+                  href={personal.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="ghost"
+                  size="md"
+                  aria-label="GitHub profile"
+                  leftIcon={<Github size={17} />}
+                >
+                  GitHub
+                </Button>
+
+                <Button
+                  as="a"
+                  href={personal.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="ghost"
+                  size="md"
+                  aria-label="LinkedIn profile"
+                  leftIcon={<Linkedin size={17} />}
+                >
+                  LinkedIn
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Quick Metrics Bar */}
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="grid grid-cols-3 gap-3 sm:gap-6 pt-6 border-t border-white/5 w-full max-w-md"
+            >
+              <div>
+                <p className="text-lg sm:text-xl font-bold text-slate-primary font-mono">4+</p>
+                <p className="text-[11px] font-mono text-slate-muted uppercase tracking-wider">Projects</p>
+              </div>
+              <div>
+                <p className="text-lg sm:text-xl font-bold text-emerald font-mono">C++ · DSA</p>
+                <p className="text-[11px] font-mono text-slate-muted uppercase tracking-wider">Core Focus</p>
+              </div>
+              <div>
+                <p className="text-lg sm:text-xl font-bold text-slate-primary font-mono">MAIT</p>
+                <p className="text-[11px] font-mono text-slate-muted uppercase tracking-wider">CSE 2025–29</p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right Column: Personal Portrait with Refined Emerald Atmospheric Glow */}
+          <div className="lg:col-span-5 relative flex items-center justify-center">
+            <motion.div
+              initial={shouldReduceMotion ? {} : { opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="relative w-full max-w-[290px] sm:max-w-[340px] lg:max-w-[400px]"
+            >
+              {/* Refined Emerald Atmospheric Glow */}
+              <div
+                className="hero-portrait-glow pointer-events-none absolute -inset-4 sm:-inset-6 rounded-full"
+                aria-hidden="true"
+              />
+
+              {/* Ambient Glass Frame Behind Portrait */}
+              <div
+                className="absolute inset-x-6 bottom-4 top-8 rounded-3xl border border-emerald/20 bg-gradient-to-b from-emerald/10 via-card/40 to-card/90 backdrop-blur-sm -z-0"
+                aria-hidden="true"
+              />
+
+              {/* Transparent Portrait Image */}
+              <img
+                src="/images/krishna-portrait.png"
+                alt="Krishna Bagri"
+                width={1086}
+                height={1448}
+                loading="eager"
+                decoding="async"
+                className="relative z-10 w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
+              />
+
+              {/* Floating Status Badge */}
+              <motion.div
+                initial={shouldReduceMotion ? {} : { opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 sm:left-4 sm:translate-x-0 z-20 px-3.5 py-2 rounded-xl bg-card/95 border border-emerald/30 shadow-card backdrop-blur-md flex items-center gap-2.5 whitespace-nowrap"
+              >
+                <div className="w-2 h-2 rounded-full bg-emerald animate-ping" />
+                <span className="text-xs font-mono font-medium text-slate-primary">
+                  CSE Undergrad @ MAIT (2025–2029)
+                </span>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

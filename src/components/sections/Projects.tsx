@@ -1,77 +1,467 @@
-import { motion, useReducedMotion } from 'motion/react';
-import { ArrowUpRight, Github, MoveUpRight } from 'lucide-react';
+import React from 'react';
+import {
+  Github,
+  ExternalLink,
+  Compass,
+  Network,
+  Orbit,
+  MessageSquare,
+  Sparkles,
+  Search,
+  CheckCircle2,
+  Calendar,
+  Layers,
+  Activity,
+  Sliders,
+  ChevronRight,
+} from 'lucide-react';
 import { projects } from '../../data/portfolio';
+import { SectionHeader } from '../ui/SectionHeader';
 import { Reveal } from '../ui/Reveal';
+import { Badge } from '../ui/Badge';
+import { Button } from '../ui/Button';
 
-const projectIndex = ['01', '02', '03', '04'];
+// High-fidelity UI mockups simulating real product screens
+function ProjectScreenshot({ projectId }: { projectId: string }) {
+  switch (projectId) {
+    case 'travelpilot':
+      return (
+        <div className="relative w-full h-full p-4 sm:p-5 flex flex-col justify-between bg-gradient-to-br from-[#0c131a] via-[#091017] to-[#060a0f] text-slate-primary select-none font-sans">
+          {/* App Header */}
+          <div className="flex items-center justify-between border-b border-white/10 pb-3 gap-2">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 rounded-lg bg-emerald/20 text-emerald flex items-center justify-center">
+                <Compass size={14} />
+              </div>
+              <span className="font-semibold text-xs text-white">TravelPilot AI</span>
+            </div>
+            <div className="flex items-center gap-2 px-3 py-1 rounded-md bg-white/[0.05] border border-white/5 text-[11px] text-slate-muted max-w-[220px] truncate">
+              <Search size={11} className="text-emerald" />
+              <span>Kyoto, Japan — 5 Days</span>
+            </div>
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald/10 text-emerald-light border border-emerald/30">
+              AI Optimized
+            </span>
+          </div>
 
-function ProjectArtwork({ id }: { id: string }) {
-  if (id === 'travelpilot') return (
-    <div className="artwork artwork-travel relative flex h-full min-h-[270px] items-center justify-center overflow-hidden p-5 sm:min-h-[350px] sm:p-8" aria-label="Travel planning interface concept" role="img">
-      <div className="travel-map-lines absolute inset-0 opacity-50" aria-hidden="true" />
-      <div className="absolute left-[12%] top-[18%] h-40 w-40 rounded-full bg-emerald/10 blur-[80px]" aria-hidden="true" />
-      <div className="travel-window relative z-10 w-full max-w-[470px] rounded-xl border border-white/15 bg-[#10151a]/90 p-4 shadow-2xl backdrop-blur-xl sm:p-5">
-        <div className="flex items-center justify-between border-b border-white/10 pb-3"><span className="font-mono text-[10px] uppercase tracking-[0.17em] text-slate-primary">TravelPilot <span className="text-emerald">/ planner</span></span><span className="rounded-full border border-emerald/20 px-2 py-1 font-mono text-[9px] text-emerald">YOUR NEXT TRIP</span></div>
-        <div className="grid grid-cols-[1fr_0.8fr] gap-4 pt-4">
-          <div><span className="font-mono text-[9px] uppercase tracking-widest text-slate-muted">A city to wander</span><h3 className="mt-1 text-2xl tracking-tight text-white sm:text-3xl">Kyoto<span className="text-emerald">,</span> Japan</h3><p className="mt-2 max-w-[190px] text-[10px] leading-5 text-slate-muted">A little more temple time. A little less rushing.</p><div className="mt-4 flex gap-2"><span className="rounded-full bg-white/[0.07] px-2.5 py-1 font-mono text-[9px] text-slate-muted">5 days</span><span className="rounded-full bg-white/[0.07] px-2.5 py-1 font-mono text-[9px] text-slate-muted">Slow travel</span></div></div>
-          <div className="flex flex-col justify-between rounded-lg border border-white/[0.08] bg-white/[0.035] p-3"><span className="font-mono text-[9px] uppercase tracking-widest text-slate-muted">Day one</span><div className="my-3 space-y-2 border-l border-emerald/25 pl-3"><p className="text-[10px] text-white">Fushimi Inari</p><p className="text-[9px] text-slate-muted">Walk the hillside paths</p></div><span className="h-px w-full bg-white/10" /><span className="mt-2 text-[9px] text-emerald">Open itinerary <MoveUpRight size={11} className="ml-1 inline" /></span></div>
+          {/* Main Dashboard Preview */}
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 my-auto py-2">
+            {/* Itinerary Stream */}
+            <div className="sm:col-span-7 space-y-2">
+              <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 space-y-1.5">
+                <div className="flex items-center justify-between text-[11px]">
+                  <span className="font-semibold text-emerald-light flex items-center gap-1.5">
+                    <Calendar size={12} /> Day 2: Arashiyama Bamboo Grove
+                  </span>
+                  <span className="text-slate-muted text-[10px] font-mono">09:00 AM</span>
+                </div>
+                <p className="text-[11px] text-slate-muted leading-relaxed">
+                  Scenic morning walk through Tenryu-ji gardens. AI suggested departing before 10 AM to avoid crowds.
+                </p>
+                <div className="flex items-center gap-2 pt-1 text-[10px] font-mono text-slate-muted">
+                  <span className="text-emerald">Transit: 18 min train</span>
+                  <span>•</span>
+                  <span>Est. Cost: ¥1,200</span>
+                </div>
+              </div>
+
+              <div className="p-2 rounded-lg bg-emerald/5 border border-emerald/20 text-[11px] flex items-center justify-between">
+                <span className="text-slate-primary text-xs flex items-center gap-1.5">
+                  <Sparkles size={12} className="text-emerald" /> Afternoon: Kinkaku-ji (Golden Pavilion)
+                </span>
+                <span className="text-[10px] text-emerald-light font-mono">★ 4.9</span>
+              </div>
+            </div>
+
+            {/* AI Assistant Output Card */}
+            <div className="sm:col-span-5 hidden sm:flex flex-col justify-between p-2.5 rounded-xl bg-black/40 border border-emerald/20 text-[11px]">
+              <div>
+                <span className="text-[10px] font-mono uppercase text-emerald tracking-wider block mb-1">
+                  AI Travel Assistant
+                </span>
+                <p className="text-slate-muted text-[11px] leading-relaxed">
+                  "Weather forecast shows clear skies. Route rearranged to maximize daylight photography."
+                </p>
+              </div>
+              <div className="pt-2 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-slate-muted">
+                <span>FastAPI + LLM</span>
+                <span className="text-emerald">Budget: $840/$1000</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom telemetry */}
+          <div className="flex items-center justify-between text-[10px] font-mono text-slate-muted pt-2 border-t border-white/5">
+            <span>Adaptive Routing Engine</span>
+            <span className="text-emerald-light">5 Days • 14 POIs • Route Synced</span>
+          </div>
         </div>
-      </div>
-      <span className="absolute bottom-5 right-6 font-mono text-[9px] uppercase tracking-[0.2em] text-white/35">01 / DESTINATION</span>
-    </div>
-  );
-  if (id === 'cerebro') return (
-    <div className="artwork artwork-cerebro relative flex h-full min-h-[270px] items-center justify-center overflow-hidden p-5 sm:min-h-[350px] sm:p-8" aria-label="Knowledge graph interface concept" role="img">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_54%_45%,rgba(16,185,129,0.12),transparent_40%)]" aria-hidden="true" />
-      <svg viewBox="0 0 500 300" className="absolute inset-0 h-full w-full" aria-hidden="true"><g stroke="rgba(52,211,153,.22)" strokeWidth="1"><path d="M250 145 117 83M250 145 177 236M250 145 364 72M250 145 392 203M177 236 82 197M364 72 424 105M117 83 82 197M392 203 424 105" /></g><g fill="rgba(52,211,153,.58)"><circle cx="117" cy="83" r="4"/><circle cx="177" cy="236" r="3"/><circle cx="364" cy="72" r="4"/><circle cx="392" cy="203" r="4"/><circle cx="82" cy="197" r="3"/><circle cx="424" cy="105" r="3"/></g></svg>
-      <div className="relative z-10 grid w-full max-w-[470px] grid-cols-[1fr_150px] items-center gap-3 sm:grid-cols-[1fr_180px]">
-        <div className="space-y-3"><div className="rounded-lg border border-emerald-light/20 bg-[#171322]/90 p-3 shadow-xl backdrop-blur-xl"><span className="font-mono text-[9px] uppercase tracking-widest text-emerald-light">A saved thought</span><p className="mt-1 text-xs text-white">Distributed systems</p></div><div className="ml-6 rounded-lg border border-white/10 bg-[#171322]/85 p-3 backdrop-blur-xl"><span className="font-mono text-[9px] uppercase tracking-widest text-slate-muted">Related note</span><p className="mt-1 text-xs text-white">Eventual consistency</p></div><div className="ml-2 rounded-lg border border-white/10 bg-[#171322]/85 p-3 backdrop-blur-xl"><span className="font-mono text-[9px] uppercase tracking-widest text-slate-muted">Web clipping</span><p className="mt-1 text-xs text-white">Designing data-intensive apps</p></div></div>
-        <div className="relative flex aspect-square items-center justify-center rounded-full border border-emerald-light/20 bg-emerald-light/[0.04] shadow-[0_0_70px_rgba(16,185,129,0.12)]"><div className="absolute inset-4 rounded-full border border-emerald-light/10"/><div className="flex h-16 w-16 items-center justify-center rounded-full border border-emerald-light/30 bg-[#18211b] font-serif text-2xl italic text-emerald-light shadow-lg">C</div></div>
-      </div>
-      <span className="absolute bottom-5 right-6 font-mono text-[9px] uppercase tracking-[0.2em] text-white/35">02 / CONNECTED KNOWLEDGE</span>
-    </div>
-  );
-  if (id === 'solarsim') return (
-    <div className="artwork artwork-solar relative flex h-full min-h-[270px] items-center justify-center overflow-hidden p-5 sm:min-h-[350px] sm:p-8" aria-label="Solar system orbital visualization concept" role="img">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_55%_55%,rgba(16,185,129,.1),transparent_50%)]" aria-hidden="true" />
-      <div className="solar-system relative flex aspect-square w-[290px] max-w-[82%] items-center justify-center" aria-hidden="true"><div className="absolute h-[95%] w-[95%] rounded-full border border-white/[0.08]"/><div className="absolute h-[73%] w-[73%] rounded-full border border-emerald-light/15"/><div className="absolute h-[51%] w-[51%] rounded-full border border-emerald-light/20"/><div className="absolute h-[28%] w-[28%] rounded-full border border-white/15"/><div className="h-9 w-9 rounded-full bg-gradient-to-br from-amber-100 via-amber-400 to-orange-500 shadow-[0_0_38px_rgba(251,191,36,.45)]"/><span className="absolute left-[13%] top-[28%] h-2 w-2 rounded-full bg-emerald-200 shadow-[0_0_16px_rgba(52,211,153,.7)]"/><span className="absolute right-[13%] top-[25%] h-3 w-3 rounded-full bg-emerald-light shadow-[0_0_18px_rgba(52,211,153,.7)]"/><span className="absolute bottom-[6%] left-[57%] h-2.5 w-2.5 rounded-full bg-emerald-light shadow-[0_0_16px_rgba(52,211,153,.7)]"/></div>
-      <span className="absolute left-7 top-7 font-mono text-[9px] uppercase tracking-[0.2em] text-emerald-light/55">An orbital study</span><span className="absolute bottom-5 right-6 font-mono text-[9px] uppercase tracking-[0.2em] text-white/35">03 / SOLAR SYSTEM</span>
-    </div>
-  );
+      );
+
+    case 'cerebro':
+      return (
+        <div className="relative w-full h-full p-4 sm:p-5 flex flex-col justify-between bg-gradient-to-br from-[#101018] via-[#0d0d14] to-[#07070b] text-slate-primary select-none font-sans">
+          {/* App Header */}
+          <div className="flex items-center justify-between border-b border-white/10 pb-3">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 rounded-lg bg-emerald/20 text-emerald flex items-center justify-center">
+                <Network size={14} />
+              </div>
+              <span className="font-semibold text-xs text-white">CereBro Knowledge Engine</span>
+            </div>
+            <div className="flex items-center gap-2 text-[10px] font-mono text-emerald bg-emerald/10 border border-emerald/30 px-2.5 py-0.5 rounded-full">
+              <span>Vector Search: 768-dim</span>
+            </div>
+          </div>
+
+          {/* Main Workspace Preview */}
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 my-auto py-2">
+            {/* Semantic Query Console */}
+            <div className="sm:col-span-7 space-y-2">
+              <div className="p-2.5 rounded-xl bg-black/40 border border-emerald/30 font-mono text-[11px] space-y-1.5">
+                <div className="text-[10px] text-slate-muted flex items-center justify-between">
+                  <span>Semantic Vector Match:</span>
+                  <span className="text-emerald">sim: 0.984</span>
+                </div>
+                <div className="text-slate-primary font-medium text-xs">
+                  query: <span className="text-emerald-light">"distributed consensus & Raft leader election"</span>
+                </div>
+              </div>
+
+              {/* Linked Knowledge Notes */}
+              <div className="space-y-1.5 text-[11px]">
+                <div className="p-2 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-between">
+                  <span className="text-slate-primary font-medium">📄 Raft_Consensus_Protocol.md</span>
+                  <span className="text-[10px] font-mono text-emerald">Linked (12 refs)</span>
+                </div>
+                <div className="p-2 rounded-lg bg-white/[0.03] border border-white/5 flex items-center justify-between">
+                  <span className="text-slate-muted">📄 Byzantine_Fault_Tolerance.md</span>
+                  <span className="text-[10px] font-mono text-slate-muted">92% similarity</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Neural Graph Mock */}
+            <div className="sm:col-span-5 hidden sm:flex flex-col justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/10">
+              <span className="text-[10px] font-mono uppercase text-slate-muted tracking-wider">
+                Graph Link Visualization
+              </span>
+              <div className="my-auto py-2 flex items-center justify-center">
+                <div className="relative w-28 h-20 flex items-center justify-center">
+                  <div className="absolute w-12 h-12 rounded-full border border-emerald/30 animate-pulse" />
+                  <div className="w-5 h-5 rounded-full bg-emerald text-[9px] flex items-center justify-center text-black font-bold">
+                    R
+                  </div>
+                  <div className="absolute -top-1 left-2 w-3.5 h-3.5 rounded-full bg-cyan/80 text-[8px] flex items-center justify-center text-black">
+                    P
+                  </div>
+                  <div className="absolute bottom-0 right-2 w-4 h-4 rounded-full bg-emerald-light/80 text-[8px] flex items-center justify-center text-black">
+                    V
+                  </div>
+                </div>
+              </div>
+              <div className="text-[10px] font-mono text-slate-muted text-center">
+                342 Nodes • 890 Edges
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Status */}
+          <div className="flex items-center justify-between text-[10px] font-mono text-slate-muted pt-2 border-t border-white/5">
+            <span>FastAPI + ChromaDB</span>
+            <span className="text-emerald">Retrieval Latency: 14ms</span>
+          </div>
+        </div>
+      );
+
+    case 'solarsim':
+      return (
+        <div className="relative w-full h-full p-4 sm:p-5 flex flex-col justify-between bg-gradient-to-br from-[#060b14] via-[#03060c] to-[#010205] text-slate-primary select-none font-sans">
+          {/* App Header */}
+          <div className="flex items-center justify-between border-b border-white/10 pb-3">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 rounded-lg bg-emerald/20 text-emerald flex items-center justify-center">
+                <Orbit size={14} />
+              </div>
+              <span className="font-semibold text-xs text-white">SolarSim 3D Engine</span>
+            </div>
+            <div className="flex items-center gap-2 text-[10px] font-mono text-slate-muted">
+              <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10">Epoch: J2000.0</span>
+              <span className="px-2 py-0.5 rounded bg-emerald/10 text-emerald border border-emerald/30">60 FPS</span>
+            </div>
+          </div>
+
+          {/* 3D Visualizer Simulation Mock */}
+          <div className="relative my-auto py-3 flex items-center justify-center min-h-[120px]">
+            {/* Concentric planetary orbits */}
+            <div className="absolute w-44 h-44 rounded-full border border-dashed border-emerald/20" />
+            <div className="absolute w-32 h-32 rounded-full border border-white/10 animate-spin" style={{ animationDuration: '30s' }} />
+            <div className="absolute w-20 h-20 rounded-full border border-cyan/20 animate-spin" style={{ animationDuration: '12s' }} />
+
+            {/* Central Sun */}
+            <div className="relative z-10 w-9 h-9 rounded-full bg-gradient-to-tr from-amber-400 to-yellow-200 shadow-[0_0_24px_rgba(251,191,36,0.6)] flex items-center justify-center text-[8px] font-bold text-amber-950">
+              SUN
+            </div>
+
+            {/* Earth & Orbiting Moon */}
+            <div className="absolute top-4 right-14 flex items-center gap-1">
+              <div className="w-3.5 h-3.5 rounded-full bg-cyan shadow-[0_0_8px_rgba(56,189,248,0.7)]" />
+              <span className="text-[9px] font-mono text-slate-muted">Earth</span>
+            </div>
+
+            {/* Mars */}
+            <div className="absolute bottom-6 left-12 flex items-center gap-1">
+              <div className="w-2.5 h-2.5 rounded-full bg-red-400 shadow-[0_0_8px_rgba(248,113,113,0.7)]" />
+              <span className="text-[9px] font-mono text-slate-muted">Mars</span>
+            </div>
+          </div>
+
+          {/* Telemetry HUD */}
+          <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 grid grid-cols-3 gap-2 text-center text-[10px] font-mono">
+            <div>
+              <span className="text-slate-muted block">Velocity</span>
+              <span className="text-emerald font-semibold">29.78 km/s</span>
+            </div>
+            <div>
+              <span className="text-slate-muted block">Semi-Major Axis</span>
+              <span className="text-slate-primary">1.000 AU</span>
+            </div>
+            <div>
+              <span className="text-slate-muted block">Eccentricity</span>
+              <span className="text-slate-primary">0.0167</span>
+            </div>
+          </div>
+
+          {/* Bottom HUD */}
+          <div className="flex items-center justify-between text-[10px] font-mono text-slate-muted pt-2 border-t border-white/5">
+            <span>TypeScript + Three.js + WebGL</span>
+            <span className="text-emerald">N-Body Kepler Mechanics</span>
+          </div>
+        </div>
+      );
+
+    case 'languistic':
+      return (
+        <div className="relative w-full h-full p-4 sm:p-5 flex flex-col justify-between bg-gradient-to-br from-[#0c1815] via-[#081210] to-[#040908] text-slate-primary select-none font-sans">
+          {/* App Header */}
+          <div className="flex items-center justify-between border-b border-white/10 pb-3">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 rounded-lg bg-emerald/20 text-emerald flex items-center justify-center">
+                <MessageSquare size={14} />
+              </div>
+              <span className="font-semibold text-xs text-white">Languistic AI Tutor</span>
+            </div>
+            <div className="flex items-center gap-2 text-[10px] font-mono">
+              <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-muted">Spanish</span>
+              <span className="px-2 py-0.5 rounded bg-emerald/10 text-emerald border border-emerald/30">Level: B2</span>
+            </div>
+          </div>
+
+          {/* Active Conversation Drill */}
+          <div className="space-y-2.5 my-auto py-2">
+            {/* AI Tutor Bubble */}
+            <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs space-y-1">
+              <div className="flex items-center justify-between text-[10px] text-emerald-light font-mono">
+                <span>AI Tutor</span>
+                <span>Audio 0:04</span>
+              </div>
+              <p className="text-slate-primary text-xs">
+                "¡Hola Krishna! ¿Cuál fue el mayor reto técnico que tuviste esta semana?"
+              </p>
+            </div>
+
+            {/* Learner Bubble with AI Grammar Evaluation */}
+            <div className="p-2.5 rounded-xl bg-emerald/10 border border-emerald/30 text-xs space-y-1 ml-4 sm:ml-8">
+              <div className="flex items-center justify-between text-[10px] text-emerald font-mono">
+                <span>You (Learner)</span>
+                <span className="text-emerald flex items-center gap-1">
+                  <CheckCircle2 size={11} /> 96% Accuracy
+                </span>
+              </div>
+              <p className="text-slate-primary text-xs">
+                "Implementé un algoritmo para optimizar la latencia de las consultas en la base de datos."
+              </p>
+              <div className="text-[10px] text-emerald-light/90 pt-1 border-t border-emerald/20 font-mono">
+                Tip: Excellent subjunctive verb usage and vocabulary precision!
+              </div>
+            </div>
+          </div>
+
+          {/* Adaptive Proficiency Metrics */}
+          <div className="flex items-center justify-between text-[10px] font-mono text-slate-muted pt-2 border-t border-white/5">
+            <span>React + FastAPI + Whisper API</span>
+            <span className="text-emerald">Daily Streak: 14 Days</span>
+          </div>
+        </div>
+      );
+
+    default:
+      return null;
+  }
+}
+
+function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   return (
-    <div className="artwork artwork-language relative flex h-full min-h-[270px] items-center justify-center overflow-hidden p-5 sm:min-h-[350px] sm:p-8" aria-label="Language practice interface concept" role="img">
-      <div className="absolute -left-10 top-5 h-48 w-48 rounded-full bg-emerald/10 blur-[90px]" aria-hidden="true" />
-      <div className="relative z-10 w-full max-w-[450px] rounded-xl border border-white/10 bg-[#0b171b]/90 p-4 shadow-2xl backdrop-blur-xl sm:p-5"><div className="flex items-center justify-between border-b border-white/10 pb-3"><span className="font-mono text-[10px] uppercase tracking-[0.17em] text-white">languistic <span className="text-emerald-light">/ practice</span></span><span className="font-mono text-[9px] text-slate-muted">ESPAÑOL</span></div><div className="mt-5 space-y-3"><div className="max-w-[86%] rounded-xl rounded-tl-sm border border-white/10 bg-white/[0.045] p-3"><span className="font-mono text-[8px] uppercase tracking-widest text-emerald-light">Conversation partner</span><p className="mt-1 text-xs text-white sm:text-sm">¿Qué te gusta hacer los fines de semana?</p></div><div className="ml-auto max-w-[82%] rounded-xl rounded-tr-sm border border-emerald/15 bg-emerald/[0.08] p-3"><span className="font-mono text-[8px] uppercase tracking-widest text-emerald-light/60">Your reply</span><p className="mt-1 text-xs text-white sm:text-sm">Me gusta explorar lugares nuevos.</p></div><div className="flex items-center gap-2 pt-1 font-mono text-[9px] text-slate-muted"><span className="h-px flex-1 bg-white/10"/>Practice at your own pace<span className="h-px flex-1 bg-white/10"/></div></div></div>
-      <span className="absolute bottom-5 right-6 font-mono text-[9px] uppercase tracking-[0.2em] text-white/35">04 / LANGUAGE PRACTICE</span>
-    </div>
+    <Reveal delay={index * 80}>
+      <article
+        className="group h-full flex flex-col rounded-2xl bg-card border border-white/10 overflow-hidden shadow-card glass-hover transition-all duration-300 hover:border-emerald/40 hover:-translate-y-1.5"
+        aria-label={`Project: ${project.title}`}
+      >
+        {/* Mock Window Titlebar */}
+        <div className="flex items-center justify-between px-4 py-3 bg-[#0a0b12] border-b border-white/10 font-mono text-xs">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+            <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald/80" />
+          </div>
+          <div className="px-3 py-0.5 rounded-md bg-white/[0.04] border border-white/5 text-[11px] text-slate-muted truncate max-w-[200px]">
+            {project.id}.app/preview
+          </div>
+          <div className="w-8" />
+        </div>
+
+        {/* Larger High-Fidelity UI Preview Container */}
+        <div className="relative h-56 sm:h-64 w-full overflow-hidden flex-shrink-0 border-b border-white/10">
+          <ProjectScreenshot projectId={project.id} />
+        </div>
+
+        {/* Content Body */}
+        <div className="flex flex-col flex-1 p-6 sm:p-7">
+          <div className="mb-4">
+            <div className="flex items-center justify-between gap-2 mb-1.5">
+              <h3 className="text-slate-primary font-bold text-xl sm:text-2xl group-hover:text-emerald transition-colors">
+                {project.title}
+              </h3>
+              <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-white/5 text-slate-muted border border-white/10">
+                0{index + 1}
+              </span>
+            </div>
+            <p className="text-emerald-light text-xs sm:text-sm font-mono font-medium">
+              {project.tagline}
+            </p>
+          </div>
+
+          <p className="text-slate-muted text-xs sm:text-sm leading-relaxed mb-5">
+            {project.description}
+          </p>
+
+          {/* Case Study Structured Breakdown: Problem & Solution */}
+          <div className="space-y-3 mb-6 flex-1 text-xs sm:text-sm">
+            <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-slate-muted block mb-1">
+                The Problem
+              </span>
+              <p className="text-slate-muted text-xs leading-relaxed">{project.problem}</p>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-emerald/[0.03] border border-emerald/15">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-emerald block mb-1">
+                Architectural Solution
+              </span>
+              <p className="text-slate-muted text-xs leading-relaxed">{project.solution}</p>
+            </div>
+          </div>
+
+          {/* Technology Badges */}
+          <div className="flex flex-wrap gap-2 mb-6" role="list" aria-label="Technologies used">
+            {project.tags.map((tag) => (
+              <Badge key={tag} variant="neutral" role="listitem">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+
+          {/* Action Links */}
+          <div className="flex flex-wrap items-center gap-3 mt-auto pt-3 border-t border-white/5">
+            {project.githubUrl ? (
+              <Button
+                as="a"
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="secondary"
+                size="sm"
+                leftIcon={<Github size={14} />}
+              >
+                Source Code
+              </Button>
+            ) : (
+              <span
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono text-slate-muted border border-white/5 bg-white/[0.02]"
+                title="Code repository URL placeholder"
+              >
+                <Github size={13} />
+                Repo Coming Soon
+              </span>
+            )}
+
+            {project.liveUrl ? (
+              <Button
+                as="a"
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outline"
+                size="sm"
+                rightIcon={<ExternalLink size={13} />}
+              >
+                Live Demo
+              </Button>
+            ) : (
+              <span
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono text-slate-muted border border-white/5 bg-white/[0.02]"
+                title="Live deployment URL placeholder"
+              >
+                <ExternalLink size={13} />
+                Live Demo TBA
+              </span>
+            )}
+          </div>
+        </div>
+      </article>
+    </Reveal>
   );
 }
 
 export function Projects() {
-  const reduceMotion = useReducedMotion();
   return (
-    <section id="projects" className="projects-section section-padding scroll-mt-16" aria-labelledby="projects-heading">
+    <section id="projects" className="section-padding scroll-mt-16" aria-labelledby="projects-heading">
       <div className="container-custom">
-        <Reveal>
-          <div className="mb-12 flex flex-col gap-6 border-b border-white/[0.09] pb-7 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
-            <div><p className="mb-4 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.22em] text-emerald"><span className="h-px w-7 bg-emerald"/>Selected work · Visual concepts</p><h2 id="projects-heading" className="max-w-xl text-4xl font-medium tracking-[-0.055em] text-slate-primary sm:text-6xl">Projects with a point of view<span className="text-emerald-light">.</span></h2></div>
-            <p className="max-w-xs text-sm leading-6 text-slate-muted sm:pb-1">Experiments in intelligent tools, connected ideas, and interactive worlds.</p>
-          </div>
-        </Reveal>
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-x-7 lg:gap-y-14">
+        <SectionHeader
+          id="projects-heading"
+          eyebrow="Featured Projects"
+          title="Engineered with"
+          titleHighlight="Purpose"
+          description="Case studies of full-stack web applications, AI systems, and interactive simulations I've architected and implemented."
+          align="center"
+        />
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {projects.map((project, i) => (
-            <Reveal key={project.id} delay={i * 70} className={i % 2 === 1 ? 'lg:mt-14' : ''}>
-              <motion.article whileHover={reduceMotion ? undefined : { y: -4 }} transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} className="group h-full">
-                <div className="relative overflow-hidden rounded-[18px] border border-white/[0.08] bg-white/[0.02] transition-colors duration-500 group-hover:border-white/[0.18]"><ProjectArtwork id={project.id}/><span className="absolute left-4 top-4 rounded-full border border-white/10 bg-black/40 px-2.5 py-1 font-mono text-[9px] tracking-wider text-white/60 backdrop-blur-sm">{projectIndex[i]} <span className="text-white/30">/ 04</span></span></div>
-                <div className="px-1 pt-5 sm:px-2 sm:pt-6">
-                  <div className="flex items-start justify-between gap-4"><div><p className="font-mono text-[10px] uppercase tracking-[0.15em] text-emerald-light">{project.tagline}</p><h3 className="mt-2 text-2xl font-medium tracking-[-0.04em] text-white sm:text-3xl">{project.title}</h3></div><a href={project.githubUrl || '#contact'} aria-label={project.githubUrl ? `View ${project.title} source on GitHub` : `Ask about ${project.title}`} className="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-slate-muted transition-all hover:border-emerald/40 hover:bg-emerald/10 hover:text-emerald focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald">{project.githubUrl ? <Github size={16}/> : <ArrowUpRight size={16}/>}</a></div>
-                  <p className="mt-3 max-w-xl text-sm leading-6 text-slate-muted">{project.description}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">{project.tags.map((tag)=><span key={tag} className="rounded-full border border-white/[0.09] px-2.5 py-1 font-mono text-[9px] text-slate-muted">{tag}</span>)}</div>
-                </div>
-              </motion.article>
-            </Reveal>
+            <ProjectCard key={project.id} project={project} index={i} />
           ))}
         </div>
+
+        <Reveal delay={250}>
+          <div className="mt-14 sm:mt-16 text-center p-8 rounded-2xl bg-card border border-white/5 max-w-2xl mx-auto">
+            <h4 className="text-slate-primary font-bold text-base sm:text-lg mb-2">
+              Interested in seeing more code & experiments?
+            </h4>
+            <p className="text-slate-muted text-xs sm:text-sm mb-5 leading-relaxed">
+              Explore my GitHub for competitive programming solutions, algorithmic benchmarks, and ongoing development work.
+            </p>
+            <Button
+              as="a"
+              href="https://github.com/krishnabagri"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="outline"
+              leftIcon={<Github size={16} />}
+            >
+              Explore GitHub Profile
+            </Button>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

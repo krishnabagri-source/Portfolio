@@ -69,8 +69,8 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'glass border-b border-white/5 py-3 shadow-lg'
-          : 'bg-base/70 backdrop-blur-md py-4 sm:py-5 border-b border-white/[0.03]'
+          ? 'glass border-b border-white/10 py-3 shadow-lg shadow-black/40'
+          : 'bg-base/80 backdrop-blur-md py-4 sm:py-5 border-b border-white/[0.04]'
       }`}
       role="banner"
     >
@@ -78,27 +78,27 @@ export function Navbar() {
         className="container-custom flex items-center justify-between"
         aria-label="Main navigation"
       >
-        {/* Logo */}
+        {/* Brand Logo */}
         <a
           href="#"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className="flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald rounded-md"
+          className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald rounded-md"
           aria-label="Krishna Bagri — back to top"
         >
-          <div className="w-8 h-8 rounded-lg bg-emerald/10 border border-emerald/20 flex items-center justify-center group-hover:bg-emerald/20 group-hover:border-emerald/40 transition-colors">
+          <div className="w-8 h-8 rounded-xl bg-emerald/15 border border-emerald/30 flex items-center justify-center group-hover:bg-emerald/25 group-hover:border-emerald/50 transition-all">
             <Code2 size={16} className="text-emerald" />
           </div>
           <span className="font-bold text-slate-primary text-sm tracking-tight">
             {personal.name.split(' ')[0]}
-            <span className="text-gradient">.dev</span>
+            <span className="text-emerald">.dev</span>
           </span>
         </a>
 
         {/* Desktop Navigation Links */}
-        <ul className="hidden md:flex items-center gap-1" role="list">
+        <ul className="hidden md:flex items-center gap-1.5" role="list">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.slice(1);
             return (
@@ -111,8 +111,8 @@ export function Navbar() {
                   }}
                   className={`px-3.5 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald ${
                     isActive
-                      ? 'text-emerald bg-emerald/10 border border-emerald/20'
-                      : 'text-slate-muted hover:text-slate-primary hover:bg-white/5'
+                      ? 'text-emerald bg-emerald/10 border border-emerald/25 font-semibold'
+                      : 'text-slate-muted hover:text-slate-primary hover:bg-white/[0.04]'
                   }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -129,14 +129,14 @@ export function Navbar() {
             href={personal.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium border border-emerald/30 text-emerald-light hover:bg-emerald/15 hover:border-emerald/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium border border-emerald/30 text-emerald-light hover:bg-emerald/15 hover:border-emerald/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald"
           >
             <Download size={13} />
             <span>Resume</span>
           </a>
         </div>
 
-        {/* Mobile Hamburger Toggle */}
+        {/* Mobile Hamburger Button */}
         <button
           className="md:hidden p-2 rounded-lg text-slate-muted hover:text-slate-primary hover:bg-white/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
@@ -165,7 +165,7 @@ export function Navbar() {
         }`}
         aria-hidden={!isOpen}
       >
-        <div className="glass border-t border-white/5 px-6 py-4 flex flex-col gap-1.5">
+        <div className="glass border-t border-white/10 px-6 py-4 flex flex-col gap-1.5">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.slice(1);
             return (
@@ -178,8 +178,8 @@ export function Navbar() {
                 }}
                 className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald flex items-center justify-between ${
                   isActive
-                    ? 'text-emerald bg-emerald/10 border border-emerald/20'
-                    : 'text-slate-muted hover:text-slate-primary hover:bg-white/5'
+                    ? 'text-emerald bg-emerald/10 border border-emerald/25 font-semibold'
+                    : 'text-slate-muted hover:text-slate-primary hover:bg-white/[0.04]'
                 }`}
                 tabIndex={isOpen ? 0 : -1}
               >
@@ -189,7 +189,7 @@ export function Navbar() {
             );
           })}
 
-          <div className="pt-2 border-t border-white/5 mt-1">
+          <div className="pt-2 border-t border-white/10 mt-1">
             <a
               href={personal.resumeUrl}
               target="_blank"

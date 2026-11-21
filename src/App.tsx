@@ -10,38 +10,38 @@ import { Contact } from './components/sections/Contact';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-base text-slate-primary overflow-x-hidden">
+    <div className="relative min-h-screen bg-base text-slate-primary overflow-x-hidden selection:bg-emerald/30 selection:text-white">
       <Navbar />
 
       <main id="main-content" role="main">
         <Hero />
 
-        {/* Divider glow */}
-        <div className="relative h-px mx-auto max-w-4xl" aria-hidden="true">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald/30 to-transparent" />
+        {/* Section Divider with subtle emerald glow */}
+        <div className="relative h-px mx-auto max-w-5xl" aria-hidden="true">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald/25 to-transparent" />
         </div>
 
         <About />
 
-        <div className="relative h-px mx-auto max-w-4xl" aria-hidden="true">
+        <div className="relative h-px mx-auto max-w-5xl" aria-hidden="true">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
         </div>
 
         <Skills />
 
-        <div className="relative h-px mx-auto max-w-4xl" aria-hidden="true">
+        <div className="relative h-px mx-auto max-w-5xl" aria-hidden="true">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald/20 to-transparent" />
         </div>
 
         <Projects />
 
-        <div className="relative h-px mx-auto max-w-4xl" aria-hidden="true">
+        <div className="relative h-px mx-auto max-w-5xl" aria-hidden="true">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
         </div>
 
         <Journey />
 
-        <div className="relative h-px mx-auto max-w-4xl" aria-hidden="true">
+        <div className="relative h-px mx-auto max-w-5xl" aria-hidden="true">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald/20 to-transparent" />
         </div>
 

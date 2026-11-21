@@ -1,27 +1,60 @@
 import React, { useState } from 'react';
-import { Code2, Layers, Wrench, BrainCircuit, Check, Terminal } from 'lucide-react';
+import {
+  Code2,
+  Layers,
+  Wrench,
+  BrainCircuit,
+  Database,
+  FileCode2,
+  Zap,
+  Palette,
+  Binary,
+  Table,
+  GitBranch,
+  Github,
+  Terminal,
+  Send,
+  Network,
+  Box,
+  Globe2,
+  Brain,
+  CheckCircle2,
+  Sparkles,
+} from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { skillCategories } from '../../data/portfolio';
 import { SectionHeader } from '../ui/SectionHeader';
 import { Reveal } from '../ui/Reveal';
 
-const categoryIcons = {
+// Icon mapping for specific technologies
+const skillIconMap: Record<string, LucideIcon> = {
+  'C++': Code2,
+  Python: FileCode2,
+  TypeScript: FileCode2,
+  JavaScript: Code2,
+  SQL: Database,
+  React: Layers,
+  FastAPI: Zap,
+  'Tailwind CSS': Palette,
+  NumPy: Binary,
+  Pandas: Table,
+  Git: GitBranch,
+  GitHub: Github,
+  'VS Code': Code2,
+  Linux: Terminal,
+  Postman: Send,
+  'Data Structures & Algorithms': Network,
+  OOP: Box,
+  'REST APIs': Globe2,
+  'Machine Learning Basics': Brain,
+  'Problem Solving': CheckCircle2,
+};
+
+const categoryIcons: Record<string, LucideIcon> = {
   Languages: Code2,
   'Frameworks & Libraries': Layers,
   'Tools & Platforms': Wrench,
   Concepts: BrainCircuit,
-};
-
-// Distinct styling for key verified skills
-const skillBadgeDetails: Record<
-  string,
-  { label: string; highlight?: boolean; note?: string }
-> = {
-  'C++': { label: 'C++', highlight: true, note: 'Primary DSA language' },
-  Python: { label: 'Python', highlight: true, note: 'AI/ML & Automation' },
-  React: { label: 'React', highlight: true, note: 'Frontend UI' },
-  TypeScript: { label: 'TypeScript', highlight: true, note: 'Type-safe web' },
-  FastAPI: { label: 'FastAPI', highlight: true, note: 'High-speed APIs' },
-  'Data Structures & Algorithms': { label: 'Data Structures & Algorithms', highlight: true, note: 'Core focus' },
 };
 
 export function Skills() {
@@ -37,22 +70,22 @@ export function Skills() {
       <div className="container-custom">
         <SectionHeader
           id="skills-heading"
-          eyebrow="Technical Stack"
+          eyebrow="Technical Arsenal"
           title="Skills &"
-          titleHighlight="Competencies"
-          description="Verified toolset grounded in core computer science principles — categorized honestly with no arbitrary percentage bars."
+          titleHighlight="Technologies"
+          description="A categorized directory of my verified technical proficiencies, grounded in computer science fundamentals without arbitrary rating bars."
           align="center"
         />
 
         {/* Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
           {['All', ...skillCategories.map((c) => c.name)].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all cursor-pointer ${
+              className={`px-4 py-2 rounded-xl text-xs font-mono transition-all duration-200 cursor-pointer ${
                 activeTab === tab
-                  ? 'bg-emerald text-white shadow-glow-emerald'
+                  ? 'bg-emerald text-black font-semibold shadow-glow-emerald'
                   : 'bg-card border border-white/5 text-slate-muted hover:text-slate-primary hover:border-white/20'
               }`}
             >
@@ -62,65 +95,64 @@ export function Skills() {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
           {categoriesToDisplay.map((category, catIdx) => {
-            const Icon = categoryIcons[category.name as keyof typeof categoryIcons] || Terminal;
+            const HeaderIcon = categoryIcons[category.name] || Terminal;
 
             return (
               <Reveal key={category.name} delay={catIdx * 70}>
-                <div className="h-full p-6 sm:p-7 rounded-2xl bg-card border border-white/5 shadow-card glass-hover transition-all duration-300 hover:border-emerald/20 flex flex-col justify-between">
+                <div className="h-full p-6 sm:p-7 rounded-2xl bg-card border border-white/10 shadow-card glass-hover transition-all duration-300 hover:border-emerald/30 flex flex-col justify-between">
                   <div>
-                    {/* Category Title */}
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className="p-2 rounded-xl bg-emerald/10 border border-emerald/20 text-emerald">
-                        <Icon size={18} />
+                    {/* Category Title Header */}
+                    <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/5">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2.5 rounded-xl bg-emerald/10 border border-emerald/20 text-emerald">
+                          <HeaderIcon size={18} />
+                        </div>
+                        <div>
+                          <h3 className="text-slate-primary font-bold text-base sm:text-lg">
+                            {category.name}
+                          </h3>
+                          <span className="text-[11px] font-mono text-slate-muted">
+                            {category.skills.length} verified competencies
+                          </span>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="text-slate-primary font-bold text-base">
-                          {category.name}
-                        </h3>
-                        <span className="text-[11px] font-mono text-slate-muted">
-                          {category.skills.length} competencies
-                        </span>
-                      </div>
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald" />
                     </div>
 
-                    {/* Skill Pills */}
-                    <div className="flex flex-wrap gap-2.5" role="list">
+                    {/* Skill Cards with Icons */}
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5" role="list">
                       {category.skills.map((skill) => {
-                        const meta = skillBadgeDetails[skill];
+                        const Icon = skillIconMap[skill] || CheckCircle2;
+                        const isPrimary = ['C++', 'Python', 'React', 'TypeScript', 'FastAPI', 'Data Structures & Algorithms'].includes(skill);
 
                         return (
                           <div
                             key={skill}
                             role="listitem"
-                            className={`group relative flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-mono font-medium transition-all duration-200 cursor-default ${
-                              meta?.highlight
-                                ? 'bg-emerald/10 border border-emerald/30 text-emerald-light shadow-sm hover:border-emerald/60 hover:bg-emerald/15'
-                                : 'bg-white/5 border border-white/5 text-slate-primary/90 hover:border-white/20 hover:bg-white/10'
+                            className={`group flex items-center gap-2.5 p-3 rounded-xl text-xs font-mono font-medium transition-all duration-200 cursor-default ${
+                              isPrimary
+                                ? 'bg-emerald/[0.06] border border-emerald/25 text-slate-primary hover:border-emerald/50 hover:bg-emerald/[0.12]'
+                                : 'bg-white/[0.03] border border-white/5 text-slate-muted hover:border-white/20 hover:text-slate-primary hover:bg-white/[0.06]'
                             }`}
                           >
-                            <Check
-                              size={12}
-                              className={meta?.highlight ? 'text-emerald' : 'text-slate-muted'}
-                            />
-                            <span>{skill}</span>
-
-                            {meta?.note && (
-                              <span className="hidden sm:inline-block text-[10px] text-slate-muted font-normal ml-1 border-l border-white/10 pl-1.5 opacity-70 group-hover:opacity-100">
-                                {meta.note}
-                              </span>
-                            )}
+                            <div className={`p-1.5 rounded-lg ${isPrimary ? 'bg-emerald/10 text-emerald' : 'bg-white/5 text-slate-muted group-hover:text-emerald'}`}>
+                              <Icon size={13} />
+                            </div>
+                            <span className="truncate">{skill}</span>
                           </div>
                         );
                       })}
                     </div>
                   </div>
 
-                  {/* Category Accent Line */}
-                  <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-muted">
-                    <span>Clean Code & Modularity</span>
-                    <span className="text-emerald">Production-Ready</span>
+                  {/* Category Footer Note */}
+                  <div className="mt-7 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-muted">
+                    <span className="flex items-center gap-1.5">
+                      <Sparkles size={11} className="text-emerald" /> Tested in Codebases
+                    </span>
+                    <span className="text-emerald-light">Production Standards</span>
                   </div>
                 </div>
               </Reveal>
@@ -128,22 +160,22 @@ export function Skills() {
           })}
         </div>
 
-        {/* Learning Focus Callout */}
-        <Reveal delay={300}>
-          <div className="mt-10 p-5 rounded-2xl border border-emerald/20 bg-gradient-to-r from-emerald/5 via-emerald/5 to-transparent flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
+        {/* Growth & Roadmap Banner */}
+        <Reveal delay={240}>
+          <div className="mt-12 p-6 rounded-2xl border border-emerald/20 bg-gradient-to-r from-emerald/[0.05] via-emerald/[0.02] to-transparent flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-3.5">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald animate-ping flex-shrink-0" />
               <div>
-                <p className="text-xs font-mono text-emerald uppercase tracking-wider">
+                <p className="text-xs font-mono text-emerald uppercase tracking-wider font-semibold">
                   Active Continuous Learning
                 </p>
-                <p className="text-sm text-slate-primary">
-                  Currently advancing deep learning architectures, transformer models, and scalable system design.
+                <p className="text-xs sm:text-sm text-slate-muted">
+                  Deepening expertise in distributed systems, vector database indexing, and C++ template metaprogramming.
                 </p>
               </div>
             </div>
-            <span className="text-xs font-mono text-emerald-light bg-emerald/10 px-3 py-1.5 rounded-lg border border-emerald/20 flex-shrink-0">
-              Target: SWE 2026/2027
+            <span className="text-xs font-mono text-emerald bg-emerald/10 px-3.5 py-1.5 rounded-xl border border-emerald/30 whitespace-nowrap">
+              Target: SWE 2026/27
             </span>
           </div>
         </Reveal>

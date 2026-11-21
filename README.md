@@ -5,22 +5,22 @@ A dark cinematic, high-performance portfolio website built with **React**, **Vit
 ---
 
 ## 🎨 Design System
-- **Theme**: Dark Cinematic
+- **Theme**: Dark Cinematic with Emerald Accents
 - **Background**: `#09090F`
-- **Surface Cards**: `#171725`
-- **Primary Accent**: Violet (`#8B5CF6`)
-- **Secondary Accent**: Cyan (`#38BDF8`)
+- **Surface Cards**: `#12131D`
+- **Primary Accent**: Emerald (`#10B981`)
+- **Secondary Accent**: Mint (`#34D399`) / Cyan (`#38BDF8`)
 - **Typography**: Inter (Body/Headings) + JetBrains Mono (Code/Badges)
 
 ---
 
 ## 🚀 Sections
 1. **Sticky Glass Navbar** — Smooth scrolling, active section tracking, responsive hamburger drawer.
-2. **Hero Section** — Animated typewriter role switcher, interactive developer terminal status widget, download resume & direct social links.
-3. **About Me** — Academic foundation at Maharaja Agrasen Institute of Technology (MAIT), verified marks (Class X 88.2%, Class XII 83.4%), and engineering philosophy.
+2. **Hero Section** — Oversized "Krishna Bagri." heading, personal transparent portrait with atmospheric emerald glow, animated typewriter role switcher, download resume & direct social links.
+3. **About Me** — Academic foundation at Maharaja Agrasen Institute of Technology (MAIT 2025–2029), verified marks (Class X 88.2%, Class XII 83.2%), and engineering philosophy.
 4. **Skills Matrix** — Grouped into Languages, Frameworks, Tools, and Core CS Concepts with honest competency tagging and interactive filtering.
 5. **Featured Projects** — TravelPilot, CereBro, SolarSim, and Languistic with simulated interactive UI window previews, problem/solution breakdowns, and code links.
-6. **Academic & Milestones Journey** — Connected glowing timeline documenting education, CBSE distinctions, and future hackathon milestones.
+6. **Academic & Milestones Journey** — Clean vertical timeline documenting education (2023 Class 10 -> 2025 Class 12 -> 2025–2029 MAIT B.Tech CSE).
 7. **Contact Hub** — Instant one-click email copy with visual feedback, pre-populated direct message composer, and social badges.
 
 ---

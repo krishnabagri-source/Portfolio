@@ -70,7 +70,7 @@ export function About() {
                       <GraduationCap size={15} className="text-emerald" />
                       MAIT Delhi (B.Tech CSE)
                     </span>
-                    <span className="text-emerald-light font-medium">2025–2029 (Pursuing)</span>
+                    <span className="text-emerald-light font-medium">2025–2029 (Expected)</span>
                   </div>
 
                   <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5">
