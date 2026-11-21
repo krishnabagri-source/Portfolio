@@ -121,13 +121,16 @@ export function About() {
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald" />
                   Building Software That Scales
                 </h3>
-                <p className="text-cyan-400 leading-relaxed text-sm sm:text-base">
+                <p
+                  style={{ color: '#E2E8F0' }}
+                  className="leading-relaxed text-sm sm:text-base"
+                >
                   {personal.bio}
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                   {personal.bioPoints.map((point) => (
-                    <div key={point} className="flex items-start gap-2.5 text-xs text-slate-muted">
+                    <div key={point} className="flex items-start gap-2.5 text-xs text-slate-300">
                       <CheckCircle2 size={14} className="text-emerald flex-shrink-0 mt-0.5" />
                       <span>{point}</span>
                     </div>
