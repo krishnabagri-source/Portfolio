@@ -234,6 +234,56 @@ export function Hero() {
                 className="relative z-10 w-full h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
               />
 
+              {/* Comic-Style Speech Bubble */}
+              <motion.div
+                initial={shouldReduceMotion ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5, y: 12 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={
+                  shouldReduceMotion
+                    ? { duration: 0 }
+                    : {
+                        type: 'spring',
+                        stiffness: 380,
+                        damping: 22,
+                        delay: 0.85,
+                      }
+                }
+                className="absolute top-[8%] -left-3 sm:-left-6 lg:-left-10 z-20 select-none pointer-events-auto"
+                aria-label="Krishna says: Hey, What's up? ✌️"
+              >
+                <div className="relative bg-[#F1F5F9] text-[#111827] px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-2xl border border-emerald/40 shadow-[0_4px_20px_rgba(0,0,0,0.35)] flex items-center gap-1.5 whitespace-nowrap">
+                  <span className="font-sans font-bold text-xs sm:text-sm tracking-tight text-[#111827]">
+                    Hey, What's up?
+                  </span>
+                  <span className="text-sm sm:text-base leading-none" role="img" aria-label="peace sign">
+                    ✌️
+                  </span>
+
+                  {/* Comic Dialogue Tapered Triangular Tail pointing toward the mouth */}
+                  <svg
+                    className="absolute -bottom-3 right-3 sm:right-4 w-5 h-4 sm:w-6 sm:h-5 overflow-visible pointer-events-none"
+                    viewBox="0 0 24 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M 2 0 L 22 18 L 14 0 Z"
+                      fill="#F1F5F9"
+                    />
+                    <path
+                      d="M 2 0 L 22 18 L 14 0"
+                      stroke="#10B981"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="opacity-50"
+                    />
+                    <line x1="2" y1="0" x2="14" y2="0" stroke="#F1F5F9" strokeWidth="2.5" />
+                  </svg>
+                </div>
+              </motion.div>
+
               {/* Floating Status Badge */}
               <motion.div
                 initial={shouldReduceMotion ? {} : { opacity: 0, y: 12 }}
