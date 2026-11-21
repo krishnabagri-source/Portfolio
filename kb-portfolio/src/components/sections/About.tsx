@@ -121,7 +121,7 @@ export function About() {
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald" />
                   Building Software That Scales
                 </h3>
-                <p className="text-slate-muted leading-relaxed text-sm sm:text-base">
+                <p className="text-cyan-400 leading-relaxed text-sm sm:text-base">
                   {personal.bio}
                 </p>
 
