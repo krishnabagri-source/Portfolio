@@ -1,3 +1,5 @@
+import colors from 'tailwindcss/colors.js';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -6,8 +8,13 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
+      backgroundColor: {
         base: '#09090F',
+      },
+      ringOffsetColor: {
+        base: '#09090F',
+      },
+      colors: {
         card: '#12131D',
         'card-hover': '#181A27',
         emerald: {
@@ -28,6 +35,7 @@ export default {
           glow: 'rgba(139,92,246,0.15)',
         },
         slate: {
+          ...colors.slate,
           primary: '#F8FAFC',
           muted: '#94A3B8',
           subtle: '#64748B',

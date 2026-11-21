@@ -121,10 +121,7 @@ export function About() {
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald" />
                   Building Software That Scales
                 </h3>
-                <p
-                  style={{ color: '#E2E8F0' }}
-                  className="leading-relaxed text-sm sm:text-base"
-                >
+                <p className="text-slate-200 leading-relaxed text-sm sm:text-base">
                   {personal.bio}
                 </p>
 
@@ -149,10 +146,10 @@ export function About() {
                         <Icon size={18} aria-hidden="true" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-white font-bold text-sm sm:text-base mb-1.5 group-hover:text-emerald transition-colors">
+                        <h4 className="text-slate-50 font-bold text-sm sm:text-base mb-1.5 group-hover:text-emerald transition-colors">
                           {title}
                         </h4>
-                        <p className="text-slate-muted text-xs sm:text-sm leading-relaxed mb-3">
+                        <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
                           {desc}
                         </p>
                         <div className="flex flex-wrap gap-1.5">
