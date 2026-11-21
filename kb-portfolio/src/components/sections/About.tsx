@@ -146,7 +146,7 @@ export function About() {
                         <Icon size={18} aria-hidden="true" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-slate-primary font-bold text-sm sm:text-base mb-1.5 group-hover:text-emerald transition-colors">
+                        <h4 className="text-white font-bold text-sm sm:text-base mb-1.5 group-hover:text-emerald transition-colors">
                           {title}
                         </h4>
                         <p className="text-slate-muted text-xs sm:text-sm leading-relaxed mb-3">
