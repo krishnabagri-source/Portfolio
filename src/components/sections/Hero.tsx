@@ -248,20 +248,20 @@ export function Hero() {
                         delay: 0.85,
                       }
                 }
-                className="absolute top-[8%] -left-3 sm:-left-6 lg:-left-10 z-20 select-none pointer-events-auto"
+                className="absolute top-[16%] left-0 sm:left-1 md:top-[8%] md:-left-6 lg:-left-10 z-20 select-none pointer-events-auto"
                 aria-label="Krishna says: Hey, What's up? ✌️"
               >
-                <div className="relative bg-[#F1F5F9] text-[#111827] px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-2xl border border-emerald/40 shadow-[0_4px_20px_rgba(0,0,0,0.35)] flex items-center gap-1.5 whitespace-nowrap">
-                  <span className="font-sans font-bold text-xs sm:text-sm tracking-tight text-[#111827]">
-                    Hey, What's up?
+                <div className="relative bg-[#F1F5F9] text-[#111827] px-2 py-1.5 sm:px-3 md:px-4 md:py-2 rounded-2xl border border-emerald/40 shadow-[0_4px_20px_rgba(0,0,0,0.35)] flex items-center gap-1 md:gap-1.5 w-[84px] sm:w-[92px] md:w-auto whitespace-normal md:whitespace-nowrap">
+                  <span className="font-sans font-bold text-[10px] sm:text-xs md:text-sm tracking-tight text-[#111827] leading-tight block md:inline">
+                    Hey, <span className="block md:inline">What's up?</span>
                   </span>
-                  <span className="text-sm sm:text-base leading-none" role="img" aria-label="peace sign">
+                  <span className="text-xs md:text-base leading-none self-end md:self-auto mb-0.5 md:mb-0" role="img" aria-label="peace sign">
                     ✌️
                   </span>
 
-                  {/* Comic Dialogue Tapered Triangular Tail pointing toward the mouth */}
+                  {/* Desktop Tail pointing down-right toward mouth (md: and up) */}
                   <svg
-                    className="absolute -bottom-3 right-3 sm:right-4 w-5 h-4 sm:w-6 sm:h-5 overflow-visible pointer-events-none"
+                    className="hidden md:block absolute -bottom-3 right-4 w-6 h-5 overflow-visible pointer-events-none"
                     viewBox="0 0 24 20"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -280,6 +280,29 @@ export function Hero() {
                       className="opacity-50"
                     />
                     <line x1="2" y1="0" x2="14" y2="0" stroke="#F1F5F9" strokeWidth="2.5" />
+                  </svg>
+
+                  {/* Mobile Tail pointing right across the 16px gap toward lips (below md) */}
+                  <svg
+                    className="block md:hidden absolute left-full top-[14px] w-[42px] h-[26px] overflow-visible pointer-events-none"
+                    viewBox="0 0 42 26"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M 0 0 L 42 22 L 0 10 Z"
+                      fill="#F1F5F9"
+                    />
+                    <path
+                      d="M 0 0 L 42 22 L 0 10"
+                      stroke="#10B981"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="opacity-50"
+                    />
+                    <line x1="0" y1="0" x2="0" y2="10" stroke="#F1F5F9" strokeWidth="2.5" />
                   </svg>
                 </div>
               </motion.div>
