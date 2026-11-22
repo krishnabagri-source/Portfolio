@@ -71,14 +71,14 @@ export function Hero() {
               </span>
             </motion.div>
 
-            {/* Oversized Name Heading with Trailing Period */}
+            {/* Oversized Name Heading */}
             <motion.h1
               initial={shouldReduceMotion ? {} : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.2 }}
               className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-slate-primary leading-[1.02] mb-3"
             >
-              Krishna Bagri<span className="text-emerald">.</span>
+              KRISHNA BAGRI
             </motion.h1>
 
             {/* Role Subtitle */}
@@ -248,11 +248,11 @@ export function Hero() {
                         delay: 0.85,
                       }
                 }
-                className="absolute top-[16%] left-0 sm:left-1 md:top-[8%] md:-left-6 lg:-left-10 z-20 select-none pointer-events-auto"
+                className="absolute top-[16%] -left-1 sm:-left-2 md:top-[8%] md:-left-6 lg:-left-10 z-20 select-none pointer-events-auto"
                 aria-label="Krishna says: Hey, What's up? ✌️"
               >
-                <div className="relative bg-[#F1F5F9] text-[#111827] px-2 py-1.5 sm:px-3 md:px-4 md:py-2 rounded-2xl border border-emerald/40 shadow-[0_4px_20px_rgba(0,0,0,0.35)] flex items-center gap-1 md:gap-1.5 w-[84px] sm:w-[92px] md:w-auto whitespace-normal md:whitespace-nowrap">
-                  <span className="font-sans font-bold text-[10px] sm:text-xs md:text-sm tracking-tight text-[#111827] leading-tight block md:inline">
+                <div className="relative bg-[#F1F5F9] text-[#111827] px-2 py-1.5 sm:px-3 md:px-4 md:py-2 rounded-2xl border border-emerald/40 shadow-[0_4px_20px_rgba(0,0,0,0.35)] flex items-center gap-1 md:gap-1.5 w-[76px] sm:w-[86px] md:w-auto whitespace-normal md:whitespace-nowrap">
+                  <span className="font-sans font-bold text-[9.5px] sm:text-xs md:text-sm tracking-tight text-[#111827] leading-tight block md:inline">
                     Hey, <span className="block md:inline">What's up?</span>
                   </span>
                   <span className="text-xs md:text-base leading-none self-end md:self-auto mb-0.5 md:mb-0" role="img" aria-label="peace sign">
@@ -282,20 +282,20 @@ export function Hero() {
                     <line x1="2" y1="0" x2="14" y2="0" stroke="#F1F5F9" strokeWidth="2.5" />
                   </svg>
 
-                  {/* Mobile Tail pointing right across the 16px gap toward lips (below md) */}
+                  {/* Mobile Tail pointing right across the gap toward lips (below md) */}
                   <svg
-                    className="block md:hidden absolute left-full top-[14px] w-[42px] h-[26px] overflow-visible pointer-events-none"
-                    viewBox="0 0 42 26"
+                    className="block md:hidden absolute left-full top-[14px] w-[52px] h-[26px] overflow-visible pointer-events-none"
+                    viewBox="0 0 52 26"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
                     <path
-                      d="M 0 0 L 42 22 L 0 10 Z"
+                      d="M 0 0 L 52 22 L 0 10 Z"
                       fill="#F1F5F9"
                     />
                     <path
-                      d="M 0 0 L 42 22 L 0 10"
+                      d="M 0 0 L 52 22 L 0 10"
                       stroke="#10B981"
                       strokeWidth="1.2"
                       strokeLinecap="round"
