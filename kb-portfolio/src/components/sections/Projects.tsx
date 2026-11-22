@@ -14,6 +14,7 @@ import {
   Activity,
   Sliders,
   ChevronRight,
+  Brain,
 } from 'lucide-react';
 import { projects } from '../../data/portfolio';
 import { SectionHeader } from '../ui/SectionHeader';
@@ -105,71 +106,72 @@ function ProjectScreenshot({ projectId }: { projectId: string }) {
           <div className="flex items-center justify-between border-b border-white/10 pb-3">
             <div className="flex items-center gap-2">
               <div className="w-6 h-6 rounded-lg bg-emerald/20 text-emerald flex items-center justify-center">
-                <Network size={14} />
+                <Brain size={14} />
               </div>
-              <span className="font-semibold text-xs text-white">CereBro Knowledge Engine</span>
+              <span className="font-semibold text-xs text-white">CereBro Adaptive Platform</span>
             </div>
             <div className="flex items-center gap-2 text-[10px] font-mono text-emerald bg-emerald/10 border border-emerald/30 px-2.5 py-0.5 rounded-full">
-              <span>Vector Search: 768-dim</span>
+              <span>Diagnostic Active</span>
             </div>
           </div>
 
           {/* Main Workspace Preview */}
           <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 my-auto py-2">
-            {/* Semantic Query Console */}
+            {/* Concept Mastery Tracker */}
             <div className="sm:col-span-7 space-y-2">
               <div className="p-2.5 rounded-xl bg-black/40 border border-emerald/30 font-mono text-[11px] space-y-1.5">
                 <div className="text-[10px] text-slate-muted flex items-center justify-between">
-                  <span>Semantic Vector Match:</span>
-                  <span className="text-emerald">sim: 0.984</span>
+                  <span>Concept Mastery Progress</span>
+                  <span className="text-emerald">Avg: 92%</span>
                 </div>
-                <div className="text-slate-primary font-medium text-xs">
-                  query: <span className="text-emerald-light">"distributed consensus & Raft leader election"</span>
+                <div className="space-y-1">
+                  <div className="flex justify-between text-[10px]">
+                    <span className="text-slate-200">DSA: Recursion & Backtracking</span>
+                    <span className="text-emerald-light">94%</span>
+                  </div>
+                  <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-emerald h-full w-[94%]" />
+                  </div>
                 </div>
               </div>
 
-              {/* Linked Knowledge Notes */}
+              {/* Spaced Repetition Due Card */}
               <div className="space-y-1.5 text-[11px]">
                 <div className="p-2 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-between">
-                  <span className="text-slate-primary font-medium">📄 Raft_Consensus_Protocol.md</span>
-                  <span className="text-[10px] font-mono text-emerald">Linked (12 refs)</span>
+                  <span className="text-slate-primary font-medium text-xs">Diagnostic Quiz: Stacks & Queues</span>
+                  <span className="text-[10px] font-mono text-emerald">Score: 9.5/10</span>
                 </div>
                 <div className="p-2 rounded-lg bg-white/[0.03] border border-white/5 flex items-center justify-between">
-                  <span className="text-slate-muted">📄 Byzantine_Fault_Tolerance.md</span>
-                  <span className="text-[10px] font-mono text-slate-muted">92% similarity</span>
+                  <span className="text-slate-muted text-xs">Spaced Repetition Review</span>
+                  <span className="text-[10px] font-mono text-slate-muted">Scheduled Today</span>
                 </div>
               </div>
             </div>
 
-            {/* Neural Graph Mock */}
+            {/* Recommendations Panel */}
             <div className="sm:col-span-5 hidden sm:flex flex-col justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/10">
               <span className="text-[10px] font-mono uppercase text-slate-muted tracking-wider">
-                Graph Link Visualization
+                Adaptive Workflow
               </span>
-              <div className="my-auto py-2 flex items-center justify-center">
-                <div className="relative w-28 h-20 flex items-center justify-center">
-                  <div className="absolute w-12 h-12 rounded-full border border-emerald/30 animate-pulse" />
-                  <div className="w-5 h-5 rounded-full bg-emerald text-[9px] flex items-center justify-center text-black font-bold">
-                    R
-                  </div>
-                  <div className="absolute -top-1 left-2 w-3.5 h-3.5 rounded-full bg-cyan/80 text-[8px] flex items-center justify-center text-black">
-                    P
-                  </div>
-                  <div className="absolute bottom-0 right-2 w-4 h-4 rounded-full bg-emerald-light/80 text-[8px] flex items-center justify-center text-black">
-                    V
-                  </div>
-                </div>
+              <div className="space-y-1.5 my-auto">
+                <span className="text-[10px] text-emerald font-mono block">Recommended Next:</span>
+                <p className="text-[11px] text-slate-200 leading-tight font-medium">
+                  Binary Search Boundary Invariants
+                </p>
+                <span className="text-[9px] text-slate-muted block font-mono">
+                  Personalized based on diagnostic telemetry
+                </span>
               </div>
-              <div className="text-[10px] font-mono text-slate-muted text-center">
-                342 Nodes • 890 Edges
+              <div className="text-[10px] font-mono text-emerald pt-1 border-t border-white/5">
+                Mastery Goal: 95%+
               </div>
             </div>
           </div>
 
           {/* Bottom Status */}
           <div className="flex items-center justify-between text-[10px] font-mono text-slate-muted pt-2 border-t border-white/5">
-            <span>FastAPI + ChromaDB</span>
-            <span className="text-emerald">Retrieval Latency: 14ms</span>
+            <span>AI-Assisted Educational Prototype</span>
+            <span className="text-emerald">Learner Analytics Synced</span>
           </div>
         </div>
       );
@@ -181,61 +183,71 @@ function ProjectScreenshot({ projectId }: { projectId: string }) {
           <div className="flex items-center justify-between border-b border-white/10 pb-3">
             <div className="flex items-center gap-2">
               <div className="w-6 h-6 rounded-lg bg-emerald/20 text-emerald flex items-center justify-center">
-                <Orbit size={14} />
+                <Sliders size={14} />
               </div>
-              <span className="font-semibold text-xs text-white">SolarSim 3D Engine</span>
+              <span className="font-semibold text-xs text-white">SolarSim Energy Analyzer</span>
             </div>
             <div className="flex items-center gap-2 text-[10px] font-mono text-slate-muted">
-              <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10">Epoch: J2000.0</span>
-              <span className="px-2 py-0.5 rounded bg-emerald/10 text-emerald border border-emerald/30">60 FPS</span>
+              <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10">C++ Engine</span>
+              <span className="px-2 py-0.5 rounded bg-emerald/10 text-emerald border border-emerald/30">Verified</span>
             </div>
           </div>
 
-          {/* 3D Visualizer Simulation Mock */}
-          <div className="relative my-auto py-3 flex items-center justify-center min-h-[120px]">
-            {/* Concentric planetary orbits */}
-            <div className="absolute w-44 h-44 rounded-full border border-dashed border-emerald/20" />
-            <div className="absolute w-32 h-32 rounded-full border border-white/10 animate-spin" style={{ animationDuration: '30s' }} />
-            <div className="absolute w-20 h-20 rounded-full border border-cyan/20 animate-spin" style={{ animationDuration: '12s' }} />
+          {/* Numerical Integration Comparison Dashboard */}
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 my-auto py-2">
+            {/* Energy Curve & Numerical Estimates */}
+            <div className="sm:col-span-7 space-y-2">
+              <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 space-y-1.5">
+                <div className="flex items-center justify-between text-[11px]">
+                  <span className="font-semibold text-emerald-light">Composite Simpson's 1/3 Rule</span>
+                  <span className="text-emerald font-mono font-bold text-xs">48.32 kWh</span>
+                </div>
+                <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                  <div className="bg-emerald h-full w-[82%]" />
+                </div>
+                <p className="text-[10px] text-slate-muted leading-tight">
+                  High-order parabolic approximation across 24h discrete solar generation intervals.
+                </p>
+              </div>
 
-            {/* Central Sun */}
-            <div className="relative z-10 w-9 h-9 rounded-full bg-gradient-to-tr from-amber-400 to-yellow-200 shadow-[0_0_24px_rgba(251,191,36,0.6)] flex items-center justify-center text-[8px] font-bold text-amber-950">
-              SUN
+              <div className="p-2.5 rounded-xl bg-white/[0.02] border border-white/5 space-y-1.5">
+                <div className="flex items-center justify-between text-[11px]">
+                  <span className="font-medium text-slate-300">Trapezoidal Rule Estimate</span>
+                  <span className="text-slate-300 font-mono text-xs">47.85 kWh</span>
+                </div>
+                <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                  <div className="bg-slate-400 h-full w-[79%]" />
+                </div>
+              </div>
             </div>
 
-            {/* Earth & Orbiting Moon */}
-            <div className="absolute top-4 right-14 flex items-center gap-1">
-              <div className="w-3.5 h-3.5 rounded-full bg-cyan shadow-[0_0_8px_rgba(56,189,248,0.7)]" />
-              <span className="text-[9px] font-mono text-slate-muted">Earth</span>
-            </div>
-
-            {/* Mars */}
-            <div className="absolute bottom-6 left-12 flex items-center gap-1">
-              <div className="w-2.5 h-2.5 rounded-full bg-red-400 shadow-[0_0_8px_rgba(248,113,113,0.7)]" />
-              <span className="text-[9px] font-mono text-slate-muted">Mars</span>
-            </div>
-          </div>
-
-          {/* Telemetry HUD */}
-          <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/5 grid grid-cols-3 gap-2 text-center text-[10px] font-mono">
-            <div>
-              <span className="text-slate-muted block">Velocity</span>
-              <span className="text-emerald font-semibold">29.78 km/s</span>
-            </div>
-            <div>
-              <span className="text-slate-muted block">Semi-Major Axis</span>
-              <span className="text-slate-primary">1.000 AU</span>
-            </div>
-            <div>
-              <span className="text-slate-muted block">Eccentricity</span>
-              <span className="text-slate-primary">0.0167</span>
+            {/* Numerical Telemetry Box */}
+            <div className="sm:col-span-5 hidden sm:flex flex-col justify-between p-2.5 rounded-xl bg-black/40 border border-emerald/20 text-[11px]">
+              <div>
+                <span className="text-[10px] font-mono uppercase text-emerald tracking-wider block mb-1">
+                  Simulation Metrics
+                </span>
+                <p className="text-slate-muted text-[11px] leading-relaxed">
+                  Discrete solar data evaluated with quadratic curvature correction.
+                </p>
+              </div>
+              <div className="space-y-1 pt-2 border-t border-white/5 text-[10px] font-mono">
+                <div className="flex justify-between">
+                  <span className="text-slate-muted">Error Margin:</span>
+                  <span className="text-emerald">&lt; 0.05%</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-muted">Live Demo:</span>
+                  <span className="text-emerald-light truncate">solarsim-ruddy</span>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Bottom HUD */}
           <div className="flex items-center justify-between text-[10px] font-mono text-slate-muted pt-2 border-t border-white/5">
-            <span>TypeScript + Three.js + WebGL</span>
-            <span className="text-emerald">N-Body Kepler Mechanics</span>
+            <span>C++ Numerical Methods + AI-Assisted Web</span>
+            <span className="text-emerald">Energy Yield Integration</span>
           </div>
         </div>
       );
@@ -249,48 +261,44 @@ function ProjectScreenshot({ projectId }: { projectId: string }) {
               <div className="w-6 h-6 rounded-lg bg-emerald/20 text-emerald flex items-center justify-center">
                 <MessageSquare size={14} />
               </div>
-              <span className="font-semibold text-xs text-white">Languistic AI Tutor</span>
+              <span className="font-semibold text-xs text-white">Languistic Empathy Engine</span>
             </div>
             <div className="flex items-center gap-2 text-[10px] font-mono">
-              <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-muted">Spanish</span>
-              <span className="px-2 py-0.5 rounded bg-emerald/10 text-emerald border border-emerald/30">Level: B2</span>
+              <span className="px-2 py-0.5 rounded bg-emerald/10 text-emerald border border-emerald/30">Friction Score: -78%</span>
             </div>
           </div>
 
-          {/* Active Conversation Drill */}
+          {/* Active Conversation Rephrasing Drill */}
           <div className="space-y-2.5 my-auto py-2">
-            {/* AI Tutor Bubble */}
+            {/* Input Message */}
             <div className="p-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs space-y-1">
-              <div className="flex items-center justify-between text-[10px] text-emerald-light font-mono">
-                <span>AI Tutor</span>
-                <span>Audio 0:04</span>
+              <div className="flex items-center justify-between text-[10px] text-slate-muted font-mono">
+                <span>Original Message (High Friction)</span>
+                <span className="text-rose-400">Blunt Tone</span>
               </div>
               <p className="text-slate-primary text-xs">
-                "¡Hola Krishna! ¿Cuál fue el mayor reto técnico que tuviste esta semana?"
+                "Your pull request broke the module and needs immediate fixing."
               </p>
             </div>
 
-            {/* Learner Bubble with AI Grammar Evaluation */}
-            <div className="p-2.5 rounded-xl bg-emerald/10 border border-emerald/30 text-xs space-y-1 ml-4 sm:ml-8">
+            {/* Empathetic & Clear Rephrasing */}
+            <div className="p-2.5 rounded-xl bg-emerald/10 border border-emerald/30 text-xs space-y-1 ml-3 sm:ml-6">
               <div className="flex items-center justify-between text-[10px] text-emerald font-mono">
-                <span>You (Learner)</span>
+                <span>Empathetic Rephrase</span>
                 <span className="text-emerald flex items-center gap-1">
-                  <CheckCircle2 size={11} /> 96% Accuracy
+                  <CheckCircle2 size={11} /> Clarity & Empathy Verified
                 </span>
               </div>
-              <p className="text-slate-primary text-xs">
-                "Implementé un algoritmo para optimizar la latencia de las consultas en la base de datos."
+              <p className="text-slate-primary text-xs leading-relaxed">
+                "Could you take a look at the recent changes in the module? It appears to be running into an unexpected issue, and your insight would be super helpful."
               </p>
-              <div className="text-[10px] text-emerald-light/90 pt-1 border-t border-emerald/20 font-mono">
-                Tip: Excellent subjunctive verb usage and vocabulary precision!
-              </div>
             </div>
           </div>
 
-          {/* Adaptive Proficiency Metrics */}
+          {/* Psychological Barrier Metrics */}
           <div className="flex items-center justify-between text-[10px] font-mono text-slate-muted pt-2 border-t border-white/5">
-            <span>React + FastAPI + Whisper API</span>
-            <span className="text-emerald">Daily Streak: 14 Days</span>
+            <span>Human-Centered AI Prototype</span>
+            <span className="text-emerald">github.com/krishnabagri-source/languistic</span>
           </div>
         </div>
       );

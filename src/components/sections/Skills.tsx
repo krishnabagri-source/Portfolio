@@ -20,6 +20,8 @@ import {
   Brain,
   CheckCircle2,
   Sparkles,
+  Search,
+  Sliders,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { skillCategories } from '../../data/portfolio';
@@ -28,33 +30,37 @@ import { Reveal } from '../ui/Reveal';
 
 // Icon mapping for specific technologies
 const skillIconMap: Record<string, LucideIcon> = {
+  C: Code2,
   'C++': Code2,
   Python: FileCode2,
-  TypeScript: FileCode2,
-  JavaScript: Code2,
-  SQL: Database,
-  React: Layers,
-  FastAPI: Zap,
-  'Tailwind CSS': Palette,
-  NumPy: Binary,
-  Pandas: Table,
+  'Data Structures & Algorithms (DSA)': Network,
+  'Object-Oriented Programming (OOP)': Box,
+  'Numerical Methods': Binary,
+  'Computational Logic': BrainCircuit,
+  Arrays: Table,
+  Strings: FileCode2,
+  'Linked Lists': GitBranch,
+  Stacks: Layers,
+  Queues: Layers,
+  Hashing: Database,
+  Sorting: Sliders,
+  Searching: Search,
+  Recursion: Zap,
   Git: GitBranch,
   GitHub: Github,
-  'VS Code': Code2,
-  Linux: Terminal,
-  Postman: Send,
-  'Data Structures & Algorithms': Network,
-  OOP: Box,
-  'REST APIs': Globe2,
-  'Machine Learning Basics': Brain,
-  'Problem Solving': CheckCircle2,
+  'Visual Studio Code': Code2,
+  'Machine Learning': Brain,
+  'Artificial Intelligence': Sparkles,
+  'Software Development': Terminal,
+  'AI-Assisted Development': BrainCircuit,
 };
 
 const categoryIcons: Record<string, LucideIcon> = {
-  Languages: Code2,
-  'Frameworks & Libraries': Layers,
-  'Tools & Platforms': Wrench,
-  Concepts: BrainCircuit,
+  'Programming Languages': Code2,
+  'Core Computer Science': BrainCircuit,
+  'DSA Topics': Network,
+  'Developer Tools': Wrench,
+  'Interests & Exploration': Brain,
 };
 
 export function Skills() {

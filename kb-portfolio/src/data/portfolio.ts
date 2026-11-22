@@ -1,5 +1,6 @@
 // ============================================================
 // All portfolio content lives here — easy to update.
+// Primary Source of Truth: Krishna Bagri Resume (Nov 2026)
 // ============================================================
 
 export interface Project {
@@ -40,21 +41,21 @@ export interface SocialLink {
 export const personal = {
   name: 'Krishna Bagri',
   title: 'Software Engineer in the Making',
-  roles: ['Software Engineer', 'C++ & DSA Developer', 'AI/ML Enthusiast', 'Problem Solver'],
+  roles: ['Software Engineer', 'C++ & DSA Developer', 'CSE (AIML) Undergrad @ MAIT', 'Problem Solver'],
   tagline: 'Crafting performant software with C++, DSA, and modern AI/ML systems.',
-  bio: `I'm a Computer Science undergraduate at Maharaja Agrasen Institute of Technology (MAIT), Delhi (2025–2029). 
-I focus on writing clean, scalable software with deep foundations in C++, Data Structures & Algorithms, 
-and practical exploration of machine learning and intelligent systems.`,
+  bio: `I'm a Computer Science and Engineering (Artificial Intelligence & Machine Learning) undergraduate at Maharaja Agrasen Institute of Technology (MAIT), Delhi (Aug 2025 – May 2029) with a 9.25 CGPA. 
+I focus on strong computer science fundamentals in C, C++, Data Structures & Algorithms, Object-Oriented Programming, and practical exploration of software development and AI-assisted workflows.`,
   bioPoints: [
-    'B.Tech in CSE at MAIT, Delhi (2025 – 2029, Expected)',
-    'Strong foundations in C++, Data Structures & Algorithms, and computational logic',
-    'Applied AI/ML and intelligent software architecture exploration',
-    'Designing scalable backend systems, clean APIs, and modern responsive frontends',
+    'B.Tech in CSE (AIML) at MAIT, Delhi (Aug 2025 – May 2029, CGPA: 9.25)',
+    'Strong foundations in C, C++, Data Structures & Algorithms, and OOP',
+    'Core DSA: Arrays, Linked Lists, Stacks, Queues, Hashing, Sorting, Searching, Recursion',
+    'AI-assisted development of intelligent prototypes and numerical simulations',
   ],
-  email: 'krishnabagri@example.com',
+  email: 'bagrikrishna2007@gmail.com',
+  phone: '+91 8700759960',
   location: 'New Delhi, India',
   githubUrl: 'https://github.com/krishnabagri-source',
-  linkedinUrl: 'https://www.linkedin.com/in/krishna-bagri-750a87382/',
+  linkedinUrl: 'https://www.linkedin.com/in/krishna-bagri-750a87382',
   resumeUrl: '/resume.pdf',
 };
 
@@ -66,36 +67,55 @@ export const socialLinks: SocialLink[] = [
 ];
 
 // ── Skills ────────────────────────────────────────────────────
+// Directly verified from Krishna's Resume:
 export const skillCategories: SkillCategory[] = [
   {
-    name: 'Languages',
-    skills: ['C++', 'Python', 'TypeScript', 'JavaScript', 'SQL'],
+    name: 'Programming Languages',
+    skills: ['C', 'C++', 'Python'],
   },
   {
-    name: 'Frameworks & Libraries',
-    skills: ['React', 'FastAPI', 'Tailwind CSS', 'NumPy', 'Pandas'],
+    name: 'Core Computer Science',
+    skills: ['Data Structures & Algorithms (DSA)', 'Object-Oriented Programming (OOP)', 'Numerical Methods', 'Computational Logic'],
   },
   {
-    name: 'Tools & Platforms',
-    skills: ['Git', 'GitHub', 'VS Code', 'Linux', 'Postman'],
+    name: 'DSA Topics',
+    skills: ['Arrays', 'Strings', 'Linked Lists', 'Stacks', 'Queues', 'Hashing', 'Sorting', 'Searching', 'Recursion'],
   },
   {
-    name: 'Concepts',
-    skills: ['Data Structures & Algorithms', 'OOP', 'REST APIs', 'Machine Learning Basics', 'Problem Solving'],
+    name: 'Developer Tools',
+    skills: ['Git', 'GitHub', 'Visual Studio Code'],
+  },
+  {
+    name: 'Interests & Exploration',
+    skills: ['Machine Learning', 'Artificial Intelligence', 'Software Development', 'AI-Assisted Development'],
   },
 ];
 
 // ── Projects ──────────────────────────────────────────────────
+// Preserving all 4 projects with precise real-world details from resume:
 export const projects: Project[] = [
+  {
+    id: 'solarsim',
+    title: 'SolarSim',
+    tagline: 'Solar Energy Analysis & Numerical Simulation',
+    description:
+      'Implemented Composite Simpson’s 1/3 Rule and the Trapezoidal Rule in C++ to estimate energy from discrete solar generation and consumption data, paired with an AI-assisted interactive dashboard.',
+    problem: 'Discrete solar generation and consumption readings fluctuate continually, requiring precise numerical integration routines to calculate total energy yields and deficits.',
+    solution: 'Engineered C++ numerical integration algorithms (Composite Simpson’s 1/3 Rule & Trapezoidal Rule) and built an AI-assisted interactive website supporting user-defined datasets and graphical comparison of results.',
+    tags: ['C++', 'Numerical Methods', 'Simpson’s 1/3 Rule', 'Trapezoidal Rule', 'AI-Assisted Web'],
+    githubUrl: undefined,
+    liveUrl: 'https://solarsim-ruddy.vercel.app',
+    screenshotPlaceholder: 'linear-gradient(135deg, #060b14 0%, #03060c 50%, #010205 100%)',
+  },
   {
     id: 'travelpilot',
     title: 'TravelPilot',
-    tagline: 'AI-powered travel itinerary planner',
+    tagline: 'AI-Powered Travel Planner Prototype',
     description:
-      'A smart travel planning application that generates personalized trip itineraries using AI, helping users discover destinations, plan routes, and manage travel logistics in one place.',
-    problem: 'Planning a trip is fragmented across multiple platforms — research, itinerary building, and budgeting are disconnected.',
-    solution: 'TravelPilot unifies trip planning with an AI assistant that generates day-by-day itineraries, recommends places, and adapts plans to user preferences.',
-    tags: ['Python', 'FastAPI', 'React', 'TypeScript', 'AI/LLM'],
+      'Created an AI-assisted travel planning prototype generating day-wise itineraries tailored to destination, dates, budget constraints, and traveler preferences.',
+    problem: 'Planning travel itineraries is time-consuming and fragmented, with high risk of scheduling conflicts, transit miscalculations, and rigid plans.',
+    solution: 'Developed an AI-assisted planning engine incorporating automated day-by-day itinerary synthesis, scheduling conflict checks, and alternative activity suggestions.',
+    tags: ['AI-Assisted Development', 'Python', 'Prompt Engineering', 'Prototyping', 'Itinerary Engine'],
     githubUrl: undefined,
     liveUrl: undefined,
     screenshotPlaceholder: 'linear-gradient(135deg, #0c131a 0%, #091017 50%, #060a0f 100%)',
@@ -103,39 +123,26 @@ export const projects: Project[] = [
   {
     id: 'cerebro',
     title: 'CereBro',
-    tagline: 'AI-enhanced knowledge management tool',
+    tagline: 'Adaptive Learning Platform Prototype',
     description:
-      'A second-brain application that uses AI to help users capture, connect, and retrieve knowledge from notes, documents, and the web with semantic search.',
-    problem: 'Information overload makes it hard to retain and connect knowledge across notes, articles, and ideas.',
-    solution: 'CereBro uses vector embeddings and semantic search to surface relevant knowledge automatically, creating an intelligent personal knowledge base.',
-    tags: ['Python', 'FastAPI', 'Vector DB', 'LLM', 'React'],
+      'Created an adaptive education prototype featuring diagnostic assessments, concept mastery tracking, and personalized study recommendations.',
+    problem: 'Traditional learning workflows follow rigid, one-size-fits-all pathways that fail to identify student-specific knowledge gaps or optimize memory retention.',
+    solution: 'Engineered an AI-assisted adaptive learning prototype featuring diagnostic assessments, concept mastery tracking, spaced repetition workflows, and learner progress visualization.',
+    tags: ['AI-Assisted Development', 'Adaptive Learning', 'Diagnostic Assessment', 'Spaced Repetition', 'Data Visualization'],
     githubUrl: undefined,
     liveUrl: undefined,
     screenshotPlaceholder: 'linear-gradient(135deg, #101018 0%, #0d0d14 50%, #07070b 100%)',
   },
   {
-    id: 'solarsim',
-    title: 'SolarSim',
-    tagline: 'Interactive solar system simulation',
-    description:
-      'A physics-based 3D simulation of the solar system built with real astronomical data, featuring accurate orbital mechanics, planet scales, and an educational info panel.',
-    problem: 'Astronomy education tools are either too simplified or too technical, lacking an engaging visual layer.',
-    solution: 'SolarSim renders the solar system with real orbital periods and distances, letting users explore planets interactively with educational overlays.',
-    tags: ['TypeScript', 'Three.js', 'Physics', 'WebGL'],
-    githubUrl: undefined,
-    liveUrl: undefined,
-    screenshotPlaceholder: 'linear-gradient(135deg, #060b14 0%, #03060c 50%, #010205 100%)',
-  },
-  {
     id: 'languistic',
     title: 'Languistic',
-    tagline: 'Language learning platform with AI tutoring',
+    tagline: 'Communication Barrier Solver Prototype',
     description:
-      'A language learning web app with AI-powered conversation practice, vocabulary building, and adaptive exercises that adjust to learner proficiency.',
-    problem: 'Traditional language apps use rigid lesson plans that don\'t adapt to how individual learners progress.',
-    solution: 'Languistic uses AI to run adaptive conversation drills, detect weak areas, and personalize vocabulary — simulating a real language tutor.',
-    tags: ['React', 'TypeScript', 'Python', 'FastAPI', 'AI/LLM'],
-    githubUrl: undefined,
+      'Created a communication-focused prototype to rephrase messages with greater empathy, clarity, and accessibility, reducing psychological friction in digital conversations.',
+    problem: 'Digital communication often suffers from emotional friction, harsh phrasing, and tone misalignment that create misunderstandings between people.',
+    solution: 'Explored human-centered AI workflows to analyze communication tone and generate empathetic, clear message rephrasings that lower psychological barriers.',
+    tags: ['AI-Assisted Development', 'Human-Centered AI', 'NLP / Empathy Rephrasing', 'Accessibility', 'Prototype'],
+    githubUrl: 'https://github.com/krishnabagri-source/languistic',
     liveUrl: undefined,
     screenshotPlaceholder: 'linear-gradient(135deg, #0c1815 0%, #081210 50%, #040908 100%)',
   },
@@ -148,7 +155,7 @@ export const timelineItems: TimelineItem[] = [
     date: '2023',
     title: 'Completed Class 10 — CBSE',
     subtitle: 'Secondary School Certificate • 88.2%',
-    description: 'Graduated with 88.2% distinction under CBSE, building a strong early foundation in mathematics, analytical reasoning, and computer basics.',
+    description: 'Graduated with 88.2% distinction under CBSE, building a solid analytical foundation in mathematics, logical reasoning, and computer fundamentals.',
     type: 'education',
   },
   {
@@ -156,16 +163,24 @@ export const timelineItems: TimelineItem[] = [
     date: '2025',
     title: 'Completed Class 12 — CBSE',
     subtitle: 'Senior School Certificate (PCM) • 83.2%',
-    description: 'Completed senior secondary education in the Physics, Chemistry, and Mathematics (PCM) stream with 83.2% under CBSE, cultivating rigorous mathematical logic and algorithmic intuition.',
+    description: 'Completed senior secondary education in the Physics, Chemistry, and Mathematics (PCM) stream with 83.2% under CBSE, cultivating mathematical logic and problem-solving discipline.',
     type: 'education',
   },
   {
     id: 'mait',
-    date: '2025 – 2029',
-    title: 'B.Tech in Computer Science & Engineering',
-    subtitle: 'Maharaja Agrasen Institute of Technology (MAIT), Delhi • Currently Pursuing (Expected 2029)',
-    description: 'Currently pursuing Bachelor of Technology in CSE (Expected 2029) with dedicated focus on core software engineering, C++, Data Structures & Algorithms, and practical AI/ML.',
+    date: 'Aug 2025 – May 2029',
+    title: 'B.Tech in Computer Science & Engineering (AIML)',
+    subtitle: 'Maharaja Agrasen Institute of Technology (MAIT), Delhi • CGPA: 9.25',
+    description: 'Currently pursuing Bachelor of Technology in CSE with specialization in Artificial Intelligence & Machine Learning (2025–2029). Maintaining an outstanding 9.25 CGPA with a rigorous focus on C, C++, Data Structures & Algorithms, and modern software development.',
     type: 'education',
     highlight: true,
+  },
+  {
+    id: 'touchtyping',
+    date: '2025',
+    title: 'Touch Typing Proficiency',
+    subtitle: '70+ Words Per Minute (WPM)',
+    description: 'Achieved high-speed touch typing proficiency exceeding 70 words per minute, enhancing programming productivity, terminal speed, and documentation efficiency.',
+    type: 'achievement',
   },
 ];

@@ -98,7 +98,7 @@ export function Contact() {
                       <span className="text-xs font-medium text-slate-primary">GitHub</span>
                     </div>
                     <span className="text-xs font-mono text-slate-muted group-hover:text-emerald-light transition-colors">
-                      @krishnabagri
+                      @krishnabagri-source
                     </span>
                   </a>
 
@@ -115,7 +115,7 @@ export function Contact() {
                       <span className="text-xs font-medium text-slate-primary">LinkedIn</span>
                     </div>
                     <span className="text-xs font-mono text-slate-muted group-hover:text-emerald transition-colors">
-                      in/krishnabagri
+                      in/krishna-bagri-750a87382
                     </span>
                   </a>
 

@@ -23,7 +23,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-slate-muted text-xs">
-              Computer Science & Engineering Student @ MAIT Delhi
+              CSE (AIML) Undergrad @ MAIT Delhi • CGPA: 9.25
             </p>
           </div>
 

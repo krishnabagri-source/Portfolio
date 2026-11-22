@@ -6,22 +6,22 @@ import { Reveal } from '../ui/Reveal';
 
 const engineeringPillars = [
   {
+    icon: GraduationCap,
+    title: 'Data Structures & Algorithms',
+    desc: 'In-depth problem solving in C++ covering Arrays, Strings, Linked Lists, Stacks, Queues, Hashing, Sorting, Searching, and Recursion.',
+    tags: ['DSA in C++', 'Recursion & Hashing', 'Complexity Analysis'],
+  },
+  {
     icon: Cpu,
-    title: 'Software Engineering & Architecture',
-    desc: 'Designing clean, maintainable systems with modular boundaries, scalable REST API patterns, and type-safe frontends.',
-    tags: ['System Architecture', 'Clean Code', 'API Design'],
+    title: 'Core Computer Science & OOP',
+    desc: 'Strong foundations in C, C++, and Python with rigorous practice in Object-Oriented Programming and numerical methods.',
+    tags: ['C & C++', 'Python', 'OOP Principles'],
   },
   {
     icon: Brain,
-    title: 'AI & Intelligent Systems',
-    desc: 'Exploring modern machine learning paradigms, vector embeddings, semantic search, and retrieval-augmented generation (RAG).',
-    tags: ['Vector DBs', 'LLMs', 'Semantic Search'],
-  },
-  {
-    icon: GraduationCap,
-    title: 'Algorithmic Problem Solving',
-    desc: 'Deep theoretical and hands-on practice in Data Structures and Algorithms using C++ to cultivate asymptotic optimization intuition.',
-    tags: ['DSA in C++', 'Optimization', 'Complexity Analysis'],
+    title: 'AI/ML & AI-Assisted Prototyping',
+    desc: 'Active interest in Machine Learning and Artificial Intelligence, building impactful functional prototypes with AI-assisted workflows.',
+    tags: ['Machine Learning', 'AI Workflows', 'Numerical Simulation'],
   },
 ];
 
@@ -60,7 +60,7 @@ export function About() {
                 </div>
 
                 <p className="text-slate-muted text-xs sm:text-sm leading-relaxed mb-6">
-                  Undergraduate in Computer Science & Engineering at Maharaja Agrasen Institute of Technology. Driven by first-principles thinking and practical software implementation.
+                  Undergraduate in Computer Science &amp; Engineering (AIML) at Maharaja Agrasen Institute of Technology. Driven by first-principles problem solving and verified academic excellence.
                 </p>
 
                 {/* Verified Academic Credentials */}
@@ -68,9 +68,9 @@ export function About() {
                   <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5">
                     <span className="text-slate-muted flex items-center gap-2">
                       <GraduationCap size={15} className="text-emerald" />
-                      MAIT Delhi (B.Tech CSE)
+                      MAIT Delhi (B.Tech CSE - AIML)
                     </span>
-                    <span className="text-emerald-light font-medium">2025–2029 (Expected)</span>
+                    <span className="text-emerald-light font-medium">CGPA: 9.25</span>
                   </div>
 
                   <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5">
@@ -106,7 +106,7 @@ export function About() {
                     Core Technical Pillars
                   </h4>
                   <p className="text-xs text-slate-muted leading-relaxed">
-                    Proficient in algorithmic problem solving with C++, backend development with Python/FastAPI, and modern React interfaces.
+                    Foundational mastery in C, C++, Python, rigorous Data Structures &amp; Algorithms, OOP principles, and AI-assisted prototyping.
                   </p>
                 </div>
               </div>

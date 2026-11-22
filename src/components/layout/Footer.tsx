@@ -23,7 +23,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-slate-muted text-xs">
-              Computer Science & Engineering Student @ MAIT Delhi
+              CSE (AIML) Undergrad @ MAIT Delhi • CGPA: 9.25
             </p>
           </div>
 
@@ -60,7 +60,7 @@ export function Footer() {
           <div className="flex items-center gap-4">
             <p className="text-slate-muted text-xs flex items-center gap-1.5">
               © {year} {personal.name}. Built with
-              <Heart size={12} className="text-emerald fill-emerald" aria-label="love" />
+              <Heart size={14} className="text-rose-500 fill-rose-500" aria-label="love" />
             </p>
 
             <button

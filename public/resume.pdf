@@ -16,83 +16,360 @@ endobj
 <<
   /Type /Page
   /Parent 2 0 R
-  /MediaBox [0 0 612 792]
+  /MediaBox [0 0 595.28 841.89]
   /Contents 4 0 R
   /Resources <<
     /Font <<
       /F1 5 0 R
       /F2 6 0 R
+      /F3 7 0 R
     >>
   >>
 >>
 endobj
 4 0 obj
 <<
-  /Length 787
+  /Length 4583
 >>
 stream
+0.059 0.090 0.165 rg
 BT
-/F1 24 Tf
-50 720 Td
-(Krishna Bagri) Tj
-/F2 12 Tf
-0 -24 Td
-(B.Tech Computer Science & Engineering | MAIT Delhi (2025 - 2029, Expected)) Tj
-0 -20 Td
-(Email: krishnabagri@example.com | Location: New Delhi, India) Tj
-0 -36 Td
-/F1 14 Tf
-(EDUCATION) Tj
-/F2 11 Tf
-0 -18 Td
-(Maharaja Agrasen Institute of Technology (MAIT) - B.Tech CSE (2025 - 2029, Expected)) Tj
-0 -16 Td
-(CBSE Class XII - 83.2% (2025) | CBSE Class X - 88.2% (2023)) Tj
-0 -36 Td
-/F1 14 Tf
-(CORE SKILLS) Tj
-/F2 11 Tf
-0 -18 Td
-(Languages: C++, Python, TypeScript, JavaScript, SQL) Tj
-0 -16 Td
-(Frameworks & Concepts: React, FastAPI, Tailwind CSS, DSA, OOP, AI/ML Basics) Tj
-0 -36 Td
-/F1 14 Tf
-(NOTE) Tj
-/F2 10 Tf
-0 -16 Td
-(This is an auto-generated preview placeholder. Full comprehensive resume available upon request.) Tj
+/F2 20 Tf
+48 790 Td
+(KRISHNA BAGRI) Tj
 ET
+0.200 0.255 0.333 rg
+BT
+/F1 9.5 Tf
+48 772 Td
+(New Delhi, India   |   +91 8700759960   |   bagrikrishna2007@gmail.com) Tj
+ET
+BT
+/F1 9.5 Tf
+48 758 Td
+(linkedin.com/in/krishna-bagri-750a87382   |   github.com/krishnabagri-source) Tj
+ET
+0.063 0.725 0.506 RG
+2 w
+48 748 m
+547 748 l
+S
+0.059 0.090 0.165 rg
+BT
+/F2 11 Tf
+48 726 Td
+(EDUCATION) Tj
+ET
+0.800 0.835 0.880 RG
+0.75 w
+48 722 m
+547 722 l
+S
+0.059 0.090 0.165 rg
+BT
+/F2 10 Tf
+48 710 Td
+(Maharaja Agrasen Institute of Technology \(MAIT\)) Tj
+ET
+0.270 0.333 0.416 rg
+BT
+/F1 9 Tf
+470 710 Td
+(New Delhi, India) Tj
+ET
+0.200 0.255 0.333 rg
+BT
+/F3 9.5 Tf
+48 696 Td
+(B.Tech in Computer Science and Engineering \(Artificial Intelligence & Machine Learning\)) Tj
+ET
+0.270 0.333 0.416 rg
+BT
+/F1 9 Tf
+450 696 Td
+(Aug 2025 - May 2029) Tj
+ET
+0.024 0.584 0.412 rg
+BT
+/F2 9.5 Tf
+48 682 Td
+(CGPA: 9.25) Tj
+ET
+0.059 0.090 0.165 rg
+BT
+/F2 11 Tf
+48 660 Td
+(TECHNICAL SKILLS) Tj
+ET
+0.800 0.835 0.880 RG
+0.75 w
+48 656 m
+547 656 l
+S
+0.059 0.090 0.165 rg
+BT
+/F2 9.2 Tf
+48 644 Td
+(Programming Languages:) Tj
+ET
+0.200 0.255 0.333 rg
+BT
+/F1 9.2 Tf
+170.4 644 Td
+(C, C++, Python) Tj
+ET
+0.059 0.090 0.165 rg
+BT
+/F2 9.2 Tf
+48 630 Td
+(Core Computer Science:) Tj
+ET
+0.200 0.255 0.333 rg
+BT
+/F1 9.2 Tf
+170.4 630 Td
+(Data Structures and Algorithms \(DSA\), Object-Oriented Programming \(OOP\)) Tj
+ET
+0.059 0.090 0.165 rg
+BT
+/F2 9.2 Tf
+48 616 Td
+(DSA Topics:) Tj
+ET
+0.200 0.255 0.333 rg
+BT
+/F1 9.2 Tf
+113.2 616 Td
+(Arrays, Strings, Linked Lists, Stacks, Queues, Hashing, Sorting, Searching, Recursion) Tj
+ET
+0.059 0.090 0.165 rg
+BT
+/F2 9.2 Tf
+48 602 Td
+(Tools:) Tj
+ET
+0.200 0.255 0.333 rg
+BT
+/F1 9.2 Tf
+87.2 602 Td
+(Git, GitHub, Visual Studio Code) Tj
+ET
+0.059 0.090 0.165 rg
+BT
+/F2 9.2 Tf
+48 588 Td
+(Interests:) Tj
+ET
+0.200 0.255 0.333 rg
+BT
+/F1 9.2 Tf
+108 588 Td
+(Machine Learning, Artificial Intelligence, Software Development) Tj
+ET
+0.059 0.090 0.165 rg
+BT
+/F2 11 Tf
+48 552 Td
+(PROJECTS) Tj
+ET
+0.800 0.835 0.880 RG
+0.75 w
+48 548 m
+547 548 l
+S
+0.059 0.090 0.165 rg
+BT
+/F2 10 Tf
+48 536 Td
+(SolarSim - Solar Energy Analysis and Simulation) Tj
+ET
+0.024 0.584 0.412 rg
+BT
+/F2 8.5 Tf
+292.2 536 Td
+(C++, Numerical Methods  |  solarsim-ruddy.vercel.app) Tj
+ET
+0.200 0.255 0.333 rg
+BT
+/F1 10 Tf
+52 523 Td
+(\225) Tj
+ET
+BT
+/F1 9 Tf
+62 523 Td
+(Implemented Composite Simpson's 1/3 Rule and the Trapezoidal Rule in C++ to estimate energy from discrete solar data.) Tj
+ET
+BT
+/F1 10 Tf
+52 510 Td
+(\225) Tj
+ET
+BT
+/F1 9 Tf
+62 510 Td
+(Built an AI-assisted interactive website with user-defined inputs, default datasets, and graphical comparisons of results.) Tj
+ET
+0.059 0.090 0.165 rg
+BT
+/F2 10 Tf
+48 494 Td
+(TravelPilot - AI-Powered Travel Planner) Tj
+ET
+0.024 0.584 0.412 rg
+BT
+/F2 8.5 Tf
+434.3 494 Td
+(AI-Assisted Development) Tj
+ET
+0.200 0.255 0.333 rg
+BT
+/F1 10 Tf
+52 481 Td
+(\225) Tj
+ET
+BT
+/F1 9 Tf
+62 481 Td
+(Created a travel planning prototype generating day-wise itineraries from destination, dates, budget, and preferences.) Tj
+ET
+BT
+/F1 10 Tf
+52 468 Td
+(\225) Tj
+ET
+BT
+/F1 9 Tf
+62 468 Td
+(Included itinerary replanning, scheduling conflict checks, and alternative activity suggestions.) Tj
+ET
+0.059 0.090 0.165 rg
+BT
+/F2 10 Tf
+48 452 Td
+(CereBro - Adaptive Learning Platform) Tj
+ET
+0.024 0.584 0.412 rg
+BT
+/F2 8.5 Tf
+434.3 452 Td
+(AI-Assisted Development) Tj
+ET
+0.200 0.255 0.333 rg
+BT
+/F1 10 Tf
+52 439 Td
+(\225) Tj
+ET
+BT
+/F1 9 Tf
+62 439 Td
+(Created an adaptive education prototype featuring diagnostic assessments, concept mastery tracking, and learning recommendations.) Tj
+ET
+BT
+/F1 10 Tf
+52 426 Td
+(\225) Tj
+ET
+BT
+/F1 9 Tf
+62 426 Td
+(Included personalized study workflows, spaced repetition, and learner progress visualization.) Tj
+ET
+0.059 0.090 0.165 rg
+BT
+/F2 10 Tf
+48 410 Td
+(Languistic - Communication Barrier Solver) Tj
+ET
+0.024 0.584 0.412 rg
+BT
+/F2 8.5 Tf
+208.89999999999998 410 Td
+(AI-Assisted Development  |  github.com/krishnabagri-source/languistic) Tj
+ET
+0.200 0.255 0.333 rg
+BT
+/F1 10 Tf
+52 397 Td
+(\225) Tj
+ET
+BT
+/F1 9 Tf
+62 397 Td
+(Created a communication-focused prototype to rephrase messages with greater empathy, clarity, and accessibility.) Tj
+ET
+BT
+/F1 10 Tf
+52 384 Td
+(\225) Tj
+ET
+BT
+/F1 9 Tf
+62 384 Td
+(Explored human-centered AI workflows to reduce psychological barriers in digital conversations.) Tj
+ET
+0.059 0.090 0.165 rg
+BT
+/F2 11 Tf
+48 346 Td
+(ADDITIONAL ACHIEVEMENTS & INTERESTS) Tj
+ET
+0.800 0.835 0.880 RG
+0.75 w
+48 342 m
+547 342 l
+S
+0.200 0.255 0.333 rg
+BT
+/F1 10 Tf
+52 330 Td
+(\225) Tj
+ET
+BT
+/F1 9.5 Tf
+62 330 Td
+(Touch typing proficiency: 70+ words per minute.) Tj
+ET
+
 endstream
 endobj
 5 0 obj
 <<
   /Type /Font
   /Subtype /Type1
-  /BaseFont /Helvetica-Bold
+  /BaseFont /Helvetica
 >>
 endobj
 6 0 obj
 <<
   /Type /Font
   /Subtype /Type1
-  /BaseFont /Helvetica
+  /BaseFont /Helvetica-Bold
+>>
+endobj
+7 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica-Oblique
 >>
 endobj
 xref
-0 7
+0 8
 0000000000 65535 f 
 0000000009 00000 n 
 0000000062 00000 n 
 0000000125 00000 n 
-0000000293 00000 n 
-0000001133 00000 n 
-0000001214 00000 n 
+0000000315 00000 n 
+0000004952 00000 n 
+0000005028 00000 n 
+0000005109 00000 n 
 trailer
 <<
-  /Size 7
+  /Size 8
   /Root 1 0 R
 >>
 startxref
-1290
+5193
 %%EOF

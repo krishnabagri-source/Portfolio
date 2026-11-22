@@ -62,7 +62,7 @@ export function Hero() {
             >
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-emerald/30 bg-emerald/10 text-emerald-light shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-emerald animate-pulse" aria-hidden="true" />
-                <span>B.Tech CSE @ MAIT (2025–2029)</span>
+                <span>B.Tech CSE (AIML) @ MAIT (2025–2029) • 9.25 CGPA</span>
               </span>
 
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] text-slate-muted">
@@ -116,10 +116,10 @@ export function Hero() {
               transition={{ duration: 0.55, delay: 0.5 }}
               className="text-slate-muted text-base sm:text-lg max-w-xl mb-8 leading-relaxed font-normal"
             >
-              Computer Science undergraduate at <span className="text-slate-primary font-medium">MAIT, Delhi</span> (2025–2029). 
-              Dedicated to engineering robust software with strong foundations in <span className="text-emerald-light font-mono font-medium">C++</span>, 
+              Computer Science &amp; Engineering (AIML) undergraduate at <span className="text-slate-primary font-medium">MAIT, Delhi</span> (2025–2029) with a <span className="text-emerald-light font-mono font-medium">9.25 CGPA</span>. 
+              Dedicated to building robust software with strong foundations in <span className="text-emerald-light font-mono font-medium">C++</span>, 
               Data Structures &amp; Algorithms (<span className="text-emerald-light font-mono font-medium">DSA</span>), 
-              and practical exploration of <span className="text-slate-primary font-medium">AI/ML</span> architectures.
+              Object-Oriented Programming (<span className="text-emerald-light font-mono font-medium">OOP</span>), and practical exploration of <span className="text-slate-primary font-medium">AI/ML</span>.
             </motion.p>
 
             {/* Action Buttons */}
@@ -198,7 +198,7 @@ export function Hero() {
               </div>
               <div>
                 <p className="text-lg sm:text-xl font-bold text-slate-primary font-mono">MAIT</p>
-                <p className="text-[11px] font-mono text-slate-muted uppercase tracking-wider">CSE 2025–29</p>
+                <p className="text-[11px] font-mono text-slate-muted uppercase tracking-wider">AIML · 9.25 CGPA</p>
               </div>
             </motion.div>
           </div>
@@ -316,7 +316,7 @@ export function Hero() {
               >
                 <div className="w-2 h-2 rounded-full bg-emerald animate-ping" />
                 <span className="text-xs font-mono font-medium text-slate-primary">
-                  CSE Undergrad @ MAIT (2025–2029)
+                  CSE (AIML) @ MAIT • 9.25 CGPA
                 </span>
               </motion.div>
             </motion.div>
