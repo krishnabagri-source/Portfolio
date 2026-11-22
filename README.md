@@ -16,7 +16,7 @@ A dark cinematic, high-performance portfolio website built with **React**, **Vit
 
 ## 🚀 Sections
 1. **Sticky Glass Navbar** — Smooth scrolling, active section tracking, responsive hamburger drawer.
-2. **Hero Section** — Oversized "Krishna Bagri." heading, personal transparent portrait with atmospheric emerald glow, animated typewriter role switcher, download resume & direct social links.
+2. **Hero Section** — Oversized "Krishna Bagri" heading, personal transparent portrait with atmospheric emerald glow, animated typewriter role switcher, download resume & direct social links.
 3. **About Me** — Academic foundation at Maharaja Agrasen Institute of Technology (MAIT 2025–2029), verified marks (Class X 88.2%, Class XII 83.2%), and engineering philosophy.
 4. **Skills Matrix** — Grouped into Languages, Frameworks, Tools, and Core CS Concepts with honest competency tagging and interactive filtering.
 5. **Featured Projects** — TravelPilot, CereBro, SolarSim, and Languistic with simulated interactive UI window previews, problem/solution breakdowns, and code links.
