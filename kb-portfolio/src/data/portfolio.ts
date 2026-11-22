@@ -53,8 +53,8 @@ and practical exploration of machine learning and intelligent systems.`,
   ],
   email: 'krishnabagri@example.com',
   location: 'New Delhi, India',
-  githubUrl: 'https://github.com/krishnabagri',
-  linkedinUrl: 'https://linkedin.com/in/krishnabagri',
+  githubUrl: 'https://github.com/krishnabagri-source',
+  linkedinUrl: 'https://www.linkedin.com/in/krishna-bagri-750a87382/',
   resumeUrl: '/resume.pdf',
 };
 
